@@ -5,6 +5,7 @@
 public class Main {
     public static void main(String[] args) {
         Controller testController = new Controller();
-        testController.addValue("1", "Kate");
+        testController.printMapa();
+        testController.addValue("2", "Misha");
     }
 }

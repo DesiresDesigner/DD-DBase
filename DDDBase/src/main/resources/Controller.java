@@ -47,7 +47,7 @@ public class Controller {
                 position += ch;
             }
         }
-        return false;
+        return true;
     }
 
     private String fileToString(File file){
@@ -81,7 +81,7 @@ public class Controller {
         }
         PrintWriter data;
         PrintWriter pointers;
-        long dataPosition = dataStorage.length();
+        long dataPosition = dataStorage.length();// + 1;
         try {
             data = new PrintWriter(new FileWriter(dataStorage, true));
             pointers = new PrintWriter(new FileWriter(pointerStorage, true));
@@ -92,6 +92,7 @@ public class Controller {
         try{
             data.append(value + ";");
             pointers.append(key + "-" + dataPosition + ";");
+            keyPointers.put(key, dataPosition);
         } catch (Exception e){
             System.out.println("Write error");
             return false;
@@ -102,5 +103,28 @@ public class Controller {
         }
 
         return true;
+    }
+
+    public String getValue(String key) throws NoSuchElementException, RuntimeException{
+        if (!keyPointers.containsKey(key))
+            throw new NoSuchElementException();
+        Long position = keyPointers.get(key);
+        String value = "";
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(dataStorage.getAbsoluteFile()));
+            in.skip(position);
+            try {
+                int c;
+                while((c = in.read()) != -1 && (char)c != ';'){
+                    value += String.valueOf((char)c);
+                }
+            } finally {
+                in.close();
+            }
+        } catch(IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return value;
     }
 }

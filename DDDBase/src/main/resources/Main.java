@@ -5,7 +5,12 @@
 public class Main {
     public static void main(String[] args) {
         Controller testController = new Controller();
-        testController.printMapa();
-        testController.addValue("2", "Misha");
+        try{
+            System.out.println(testController.getValue("3"));
+            System.out.println(testController.getValue("6"));
+        } catch(Exception e) {
+            System.out.println("Error");
+        }
     }
+
 }

@@ -6,10 +6,11 @@ import java.util.*;
  * @since 1/6/14
  */
 public class Controller {
-    final File dataStorage;
-    final File pointerStorage;
-    final File freeSpace;
+    private final File dataStorage;
+    private final File pointerStorage;
+    private final File freeSpace;
     private Map <String, Long> keyPointers;
+    private Map <Long, Integer> freePointers;
 
     Controller(){
         dataStorage = new File("data");
@@ -17,7 +18,9 @@ public class Controller {
         freeSpace = new File("free");
 
         keyPointers = new HashMap();
+        freePointers = new HashMap();
         gatherKeyPointers();
+        gatherFreePointers();
     }
 
     /*Controller(String dataStorage, String pointerStorage){
@@ -60,6 +63,40 @@ public class Controller {
         return true;
     }
 
+    private boolean gatherFreePointers(){
+        String keys;
+        try{
+            keys = fileToString(freeSpace);
+        }
+        catch (RuntimeException e){
+            System.out.println("Can't read free space storage, perhaps it's empty");
+            return false;
+        }
+
+        String pos = "";
+        String length = "";
+        boolean posFLG = true;
+        for (char ch : keys.toCharArray()){
+            if (ch == '-'){
+                posFLG = false;
+                continue;
+            }
+            else if (ch == ';'){
+                posFLG = true;
+                freePointers.put(Long.parseLong(pos), Integer.parseInt(length));
+                pos = "";
+                length = "";
+                continue;
+            }
+            if (posFLG){
+                pos += ch;
+            } else {
+                length += ch;
+            }
+        }
+        return true;
+    }
+
     private String fileToString(File file){
         StringBuilder sb = new StringBuilder();
         try {
@@ -78,10 +115,19 @@ public class Controller {
         return sb.toString();
     }
 
-    public void printMapa(){
-        for (String key : keyPointers.keySet()) {
-            System.out.println(key + " - " + keyPointers.get(key) + ";");
+    /*public void printFree(){
+        for (Long pos : freePointers.keySet()){
+            System.out.println(pos + " - " + freePointers.get(pos));
         }
+    } */
+
+    private long getPosition(int length){
+        for (Long pos : freePointers.keySet()){
+            if (length <= freePointers.get(pos)){
+                return pos;
+            }
+        }
+        return dataStorage.length();
     }
 
     public boolean addValue(String key, String value) {
@@ -89,28 +135,28 @@ public class Controller {
             System.out.println("This key is already exist");
             return false;
         }
-        PrintWriter data;
+        RandomAccessFile data;
         PrintWriter pointers;
-        long dataPosition = dataStorage.length();// + 1;
+        long dataPosition = getPosition(value.length());
         try {
-            data = new PrintWriter(new FileWriter(dataStorage, true));
+            data = new RandomAccessFile(dataStorage, "rw");
             pointers = new PrintWriter(new FileWriter(pointerStorage, true));
-        } catch (Exception e) {
-            System.out.println("Can't open data storage or pointers storage");
-            return false;
-        }
-        try{
-            data.append(value + ";");
+            data.seek(dataPosition);
+            value += ";";
+            data.write(value.getBytes());
             pointers.append(key + "-" + dataPosition + ";");
             keyPointers.put(key, dataPosition);
-        } catch (Exception e){
-            System.out.println("Write error");
-            return false;
-        }
-        finally {
             data.close();
             pointers.close();
+        } catch (FileNotFoundException notFound) {
+            System.out.println("Can't open data storage or pointers storage");
+            return false;
+        } catch (IOException io) {
+            System.out.println("Writing error");
+            return false;
         }
+        freePointers.remove(dataPosition);
+        rewriteFreeSpace();
 
         return true;
     }
@@ -193,6 +239,29 @@ public class Controller {
         }
         finally {
             keys.close();
+        }
+        return true;
+    }
+
+    private boolean rewriteFreeSpace(){
+        PrintWriter free;
+        try {
+            free = new PrintWriter(freeSpace); //new FileWriter(pointerStorage, true)
+        } catch (Exception e) {
+            System.out.println("Can't open free space Storage");
+            return false;
+        }
+        try{
+            free.write("");
+            for(Long pos : freePointers.keySet()){
+                free.append(pos + "-" + freePointers.get(pos) + ";");
+            }
+        } catch (Exception e){
+            System.out.println("Write error");
+            return false;
+        }
+        finally {
+            free.close();
         }
         return true;
     }

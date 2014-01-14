@@ -10,10 +10,10 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/pom.xml" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1388139296179" ignored="false" />
     <file path="/HelloWorldsTest.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1388139513456" ignored="false" />
-    <file path="/Dummy.txt" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1389689822229" ignored="false" />
+    <file path="/Dummy.txt" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1389695795177" ignored="false" />
     <file path="/README" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1388141813549" ignored="false" />
-    <file path="/Controller.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1389695453124" ignored="false" />
-    <file path="/Main.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1389695148341" ignored="false" />
+    <file path="/Controller.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1389700576623" ignored="false" />
+    <file path="/Main.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1389700541488" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,7 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DDDBase/src/main/resources/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
+            <state line="12" column="59" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,7 +106,7 @@
       <file leaf-file-name="Controller.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DDDBase/src/main/resources/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="9" selection-start="4467" selection-end="4467" vertical-scroll-proportion="5.7989693">
+            <state line="195" column="8" selection-start="5835" selection-end="5835" vertical-scroll-proportion="0.92268044">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -525,7 +525,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="getting values by key, improvement adding values" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove values by key" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -543,6 +543,7 @@
     <MESSAGE value="Adding key-value" />
     <MESSAGE value="Gathering keys and positions of value in HashMap in the start and checking if this key is already exist while adding new key-value" />
     <MESSAGE value="getting values by key, improvement adding values" />
+    <MESSAGE value="remove values by key" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -650,7 +651,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DDDBase/src/main/resources/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
+        <state line="12" column="59" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -659,7 +660,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DDDBase/src/main/resources/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="9" selection-start="4467" selection-end="4467" vertical-scroll-proportion="5.7989693">
+        <state line="195" column="8" selection-start="5835" selection-end="5835" vertical-scroll-proportion="0.92268044">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

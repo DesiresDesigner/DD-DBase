@@ -9,19 +9,8 @@ import java.io.RandomAccessFile;
 public class Main {
     public static void main(String[] args) throws IOException {
         Controller testController = new Controller();
-        testController.addValue("1", "Artemiy");
-        testController.addValue("2", "Kate");
-        testController.addValue("3", "Misha");
-        testController.addValue("4", "Natalia");
-        testController.addValue("5", "Tatiana");
-        testController.addValue("6", "Vitaliy");
-        System.out.println(testController.getValue("1"));
-        System.out.println(testController.getValue("2"));
-        System.out.println(testController.getValue("3"));
-        System.out.println(testController.getValue("4"));
-        System.out.println(testController.getValue("5"));
-        System.out.println(testController.getValue("6"));
-        testController.deleteValue("4");
+        testController.addValue("101", "Masha");
+        System.out.println(testController.getValue("101"));
         /*try {
             RandomAccessFile invFile = new RandomAccessFile("test", "rw");
             invFile.seek(5);

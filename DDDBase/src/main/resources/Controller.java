@@ -8,11 +8,14 @@ import java.util.*;
 public class Controller {
     final File dataStorage;
     final File pointerStorage;
+    final File freeSpace;
     private Map <String, Long> keyPointers;
 
     Controller(){
         dataStorage = new File("data");
         pointerStorage = new File("pointers");
+        freeSpace = new File("free");
+
         keyPointers = new HashMap();
         gatherKeyPointers();
     }
@@ -24,7 +27,14 @@ public class Controller {
     }*/
 
     private boolean gatherKeyPointers(){
-        String keys = fileToString(pointerStorage);
+        String keys;
+        try{
+            keys = fileToString(pointerStorage);
+        }
+        catch (RuntimeException e){
+            System.out.println("Can't read pointer storage, perhaps it's empty");
+            return false;
+        }
 
         String key = "";
         String position = "";
@@ -126,5 +136,64 @@ public class Controller {
         }
 
         return value;
+    }
+
+    public boolean deleteValue(String key) throws IOException {
+        if (!keyPointers.containsKey(key))
+            throw new NoSuchElementException();
+        long position = keyPointers.get(key);
+        int size = 0;
+        RandomAccessFile data = new RandomAccessFile(dataStorage, "rw");
+        data.seek(position);
+        char c;
+        while((c = (char)data.readByte()) != ';'){
+            ++size;
+        }
+        PrintWriter free;
+        try {
+            free = new PrintWriter(new FileWriter(freeSpace, true));
+        } catch (Exception e) {
+            System.out.println("Can't save changes");
+            return false;
+        }
+        try{
+            free.append(position + "-" + size + ";");
+        } catch (Exception e){
+            System.out.println("Write error");
+            return false;
+        }
+        finally {
+            free.close();
+            data.close();
+        }
+        keyPointers.remove(key);
+        if (!rewriteKeys()){
+            System.out.println("Write error");
+            return false;
+        }
+        return false;
+    }
+
+    private boolean rewriteKeys(){
+        PrintWriter keys;
+        try {
+            keys = new PrintWriter(pointerStorage); //new FileWriter(pointerStorage, true)
+        } catch (Exception e) {
+            System.out.println("Can't open pointers Storage");
+            return false;
+        }
+        try{
+            keys.write("");
+            for(String key : keyPointers.keySet()){
+                keys.append(key + "-" + keyPointers.get(key) + ";");
+            }
+        } catch (Exception e){
+            System.out.println("Write error");
+            return false;
+        }
+        finally {
+            keys.close();
+        }
+        return true;
     }
 }

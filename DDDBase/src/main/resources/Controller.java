@@ -122,12 +122,21 @@ public class Controller {
     } */
 
     private long getPosition(int length){
+        long bestPos = 0;
+        int bestLeng = 0;
         for (Long pos : freePointers.keySet()){
-            if (length <= freePointers.get(pos)){
-                return pos;
+            int leng = freePointers.get(pos);
+            if (length <= leng){
+                if (bestLeng == 0 || bestLeng > leng){
+                    bestLeng = leng;
+                    bestPos = pos;
+                }
+                //return pos;
             }
         }
-        return dataStorage.length();
+        if (bestPos == 0)
+            bestPos = dataStorage.length();
+        return bestPos;
     }
 
     public boolean addValue(String key, String value) {
@@ -212,11 +221,18 @@ public class Controller {
             free.close();
             data.close();
         }
+        freePointers.put(position, size);
         keyPointers.remove(key);
         if (!rewriteKeys()){
             System.out.println("Write error");
             return false;
         }
+        return false;
+    }
+
+    public boolean editValue(String key, String value) throws IOException {
+        deleteValue(key);
+        addValue(key, value);
         return false;
     }
 

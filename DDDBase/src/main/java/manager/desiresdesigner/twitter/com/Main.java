@@ -1,6 +1,6 @@
-import java.io.FileNotFoundException;
+package manager.desiresdesigner.twitter.com;
+
 import java.io.IOException;
-import java.io.RandomAccessFile;
 
 /**
  * @author desiresdesigner
@@ -8,7 +8,7 @@ import java.io.RandomAccessFile;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-        Controller testController = new Controller();
+        /*Manager testController = new Manager();
         testController.addValue("1", "Kate");
         testController.addValue("2", "Michail");
         testController.addValue("3", "Artemiy");
@@ -17,7 +17,12 @@ public class Main {
         testController.addValue("6", "Natasha");
         testController.deleteValue("5");
         testController.addValue("101", "Masha");
-        System.out.println(testController.getValue("101"));
+        System.out.println(testController.getValue("101"));*/
+
+        int i = 0;
+        i = (i++ + ++i);
+
+        System.out.println(i);
     }
 
 }

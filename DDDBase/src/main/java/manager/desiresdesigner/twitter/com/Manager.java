@@ -1,3 +1,5 @@
+package manager.desiresdesigner.twitter.com;
+
 import java.io.*;
 import java.util.*;
 
@@ -5,14 +7,14 @@ import java.util.*;
  * @author desiresdesigner
  * @since 1/6/14
  */
-public class Controller {
+public class Manager {
     private final File dataStorage;
     private final File pointerStorage;
     private final File freeSpace;
     private Map <String, Long> keyPointers;
     private Map <Long, Integer> freePointers;
 
-    Controller(){
+    public Manager(){
         dataStorage = new File("data");
         pointerStorage = new File("pointers");
         freeSpace = new File("free");
@@ -23,7 +25,7 @@ public class Controller {
         gatherFreePointers();
     }
 
-    /*Controller(String dataStorage, String pointerStorage){
+    /*Manager(String dataStorage, String pointerStorage){
         this.dataStorage = new File(dataStorage);
         this.pointerStorage = new File(pointerStorage);
         keyPointers = new HashMap();

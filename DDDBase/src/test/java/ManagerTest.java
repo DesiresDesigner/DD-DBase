@@ -3,8 +3,7 @@
  * @since 1/15/14
  */
 
-//import org.junit.Before;
-//import org.junit.Test;
+import manager.desiresdesigner.twitter.com.Manager;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -14,12 +13,12 @@ import java.io.IOException;
 import static junit.framework.Assert.assertEquals;
 
 @RunWith(JUnit4.class)
-public class ControllerTest {
-    Controller testController;
+public class ManagerTest {
+    Manager testController;
 
     @Before
     public void before() {
-        testController = new Controller();
+        testController = new Manager();
     }
 
     @Test

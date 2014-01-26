@@ -2,31 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c31727a-6e3c-40f8-a08b-3246879c8ee0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DDDBase/src/main/resources/Controller.java" afterPath="$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DDDBase/src/main/resources/Main.java" afterPath="$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DDDBase/src/test/java/ControllerTest.java" afterPath="$PROJECT_DIR$/DDDBase/src/test/java/ManagerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DDDBase/DDDBase.iml" afterPath="$PROJECT_DIR$/DDDBase/DDDBase.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DDDBase/pom.xml" afterPath="$PROJECT_DIR$/DDDBase/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java" afterPath="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java" afterPath="$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DesiresDesigner-DataBase.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/pom.xml" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1388139296179" ignored="false" />
     <file path="/HelloWorldsTest.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1388139513456" ignored="false" />
-    <file path="/Dummy.txt" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390757413227" ignored="false" />
+    <file path="/Dummy.txt" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390774284281" ignored="false" />
     <file path="/README" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1388141813549" ignored="false" />
     <file path="/Controller.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1389731839155" ignored="false" />
     <file path="/Main.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390768480775" ignored="false" />
     <file path="/ControllerTest.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1389732199022" ignored="false" />
     <file path="/fragment.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390302573667" ignored="false" />
-    <file path="/Shard.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390769735270" ignored="false" />
+    <file path="/Shard.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390771182366" ignored="false" />
     <file path="/Manager.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390315426676" ignored="false" />
     <file path="/SimpleHttpServer.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390758126825" ignored="false" />
     <file path="/ShardStarter.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390765086417" ignored="false" />
-    <file path="/ShardTest.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390766894869" ignored="false" />
+    <file path="/ShardTest.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390774844043" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +35,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -78,7 +72,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -97,46 +91,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Shard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="35" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ShardStarter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="24" column="33" selection-start="831" selection-end="831" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShardTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Manager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="146" column="0" selection-start="4057" selection-end="4057" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Shard.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="61" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShardTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="31" selection-start="1540" selection-end="1540" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerExample.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/test/desiresdesigner/twitter/com/ServerExample.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="522" selection-end="522" vertical-scroll-proportion="0.55012226">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="0" column="41" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -171,10 +157,10 @@
         <option value="$PROJECT_DIR$/DDDBase/pom.xml" />
         <option value="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/test/java/ManagerTest.java" />
-        <option value="$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Main.java" />
-        <option value="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/main/java/test/desiresdesigner/twitter/com/ServerExample.java" />
+        <option value="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java" />
+        <option value="$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java" />
       </list>
     </option>
   </component>
@@ -323,36 +309,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DesiresDesigner-DataBase" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DDDBase" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -656,10 +612,10 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.49880096" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13269384" sideWeight="0.7092084" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13749" sideWeight="0.7092084" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1598721" sideWeight="0.7092084" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2907916" sideWeight="0.49880096" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2907916" sideWeight="0.49880096" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32881355" sideWeight="0.49959967" order="1" side_tool="false" content_ui="tabs" />
@@ -710,7 +666,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="editing and completed tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation of Shard(without logic, only base) and ShardStarter + ShardTest" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -731,6 +687,7 @@
     <MESSAGE value="remove values by key" />
     <MESSAGE value="improved adding value" />
     <MESSAGE value="editing and completed tests" />
+    <MESSAGE value="implementation of Shard(without logic, only base) and ShardStarter + ShardTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -797,13 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="87" selection-start="6667" selection-end="6781" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DDDBase/src/test/java/ManagerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="74" selection-start="272" selection-end="272" vertical-scroll-proportion="0.4400978">
@@ -821,39 +771,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java">
+    <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/test/desiresdesigner/twitter/com/ServerExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="31" selection-start="1540" selection-end="1540" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="15" column="0" selection-start="522" selection-end="522" vertical-scroll-proportion="0.55012226" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="0" selection-start="4057" selection-end="4057" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="33" selection-start="831" selection-end="831" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="35" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="48" column="61" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/test/desiresdesigner/twitter/com/ServerExample.java">
+    <entry file="file://$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="522" selection-end="522" vertical-scroll-proportion="0.55012226">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="0" column="41" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>

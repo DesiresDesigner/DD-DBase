@@ -37,23 +37,31 @@ public class Shard implements HttpHandler {
         String responseBody = "";
 
         String command = httpExchange.getRequestHeaders().get("command").get(0);
-        String key = httpExchange.getRequestHeaders().get("key").get(0);
-        String value = httpExchange.getRequestHeaders().get("value").get(0);
-        //if (command == "add"){
+        String key = "";
+        if (httpExchange.getRequestHeaders().containsKey("key")){
+            key = httpExchange.getRequestHeaders().get("key").get(0);
+        }
+        String value = "";
+        if (httpExchange.getRequestHeaders().containsKey("value")){
+            value = httpExchange.getRequestHeaders().get("value").get(0);
+        }
         if (command.equals("add")){
-            responseBody = "add";
+            boolean res = shardManager.addValue(key, value);
+            responseBody = String.valueOf(res);
         }
         else if (command.equals("del")){
-            responseBody = "del";
+            boolean res = shardManager.deleteValue(key);
+            responseBody = String.valueOf(res);
         }
         else if (command.equals("edit")){
-            responseBody = "edit";
+            boolean res = shardManager.editValue(key, value);
+            responseBody = String.valueOf(res);
         }
         else if (command.equals("get")){
-            responseBody = "get";
+            responseBody = shardManager.getValue(key);
         }
         else {
-            responseBody = "not valid command:" + command + ".";
+            responseBody = "not valid command: " + command + ".";
         }
 
         final Writer writer = new OutputStreamWriter(httpExchange.getResponseBody());

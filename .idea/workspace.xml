@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c31727a-6e3c-40f8-a08b-3246879c8ee0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DDDBase/src/main/java/DDDB/desiresdesigner/twitter/com/DDDB.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DDDBase/src/test/java/DDDBTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java" afterPath="$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java" afterPath="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java" afterPath="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java" afterPath="$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -10,17 +14,19 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/pom.xml" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1388139296179" ignored="false" />
     <file path="/HelloWorldsTest.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1388139513456" ignored="false" />
-    <file path="/Dummy.txt" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390774284281" ignored="false" />
+    <file path="/Dummy.txt" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390836509403" ignored="false" />
     <file path="/README" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1388141813549" ignored="false" />
     <file path="/Controller.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1389731839155" ignored="false" />
     <file path="/Main.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390768480775" ignored="false" />
     <file path="/ControllerTest.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1389732199022" ignored="false" />
-    <file path="/fragment.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390302573667" ignored="false" />
-    <file path="/Shard.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390771182366" ignored="false" />
-    <file path="/Manager.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390315426676" ignored="false" />
+    <file path="/fragment.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390836576001" ignored="false" />
+    <file path="/Shard.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390775185370" ignored="false" />
+    <file path="/Manager.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390832480029" ignored="false" />
     <file path="/SimpleHttpServer.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390758126825" ignored="false" />
-    <file path="/ShardStarter.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390765086417" ignored="false" />
+    <file path="/ShardStarter.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390836493390" ignored="false" />
     <file path="/ShardTest.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390774844043" ignored="false" />
+    <file path="/DDDB.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390836763890" ignored="false" />
+    <file path="/DDDBTest.java" changelist="1c31727a-6e3c-40f8-a08b-3246879c8ee0" time="1390836808771" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,8 +100,10 @@
       <file leaf-file-name="ShardStarter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="33" selection-start="831" selection-end="831" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="14" column="28" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,26 +111,30 @@
       <file leaf-file-name="Manager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="0" selection-start="4057" selection-end="4057" vertical-scroll-proportion="0.0">
+            <state line="25" column="42" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Shard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java">
+      <file leaf-file-name="DDDB.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/DDDB/desiresdesigner/twitter/com/DDDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="61" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="66" column="83" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.30656934">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShardTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java">
+      <file leaf-file-name="DDDBTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DDDBase/src/test/java/DDDBTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="41" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="31" column="7" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,22 +157,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/DDDBase/src/main/resources/Main.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/main/resources/Controller.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/test/java/ControllerTest.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/main/resources/manager/desiresdesigner/twitter/com/Manager.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/main/resources/manager/desiresdesigner/twitter/com/com/Manager.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/main/java/com/Manager.java" />
-        <option value="$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/main/java/test/desiresdesigner/twitter/com/SimpleHttpServer.java" />
         <option value="$PROJECT_DIR$/DDDBase/pom.xml" />
-        <option value="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/test/java/ManagerTest.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Main.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/main/java/test/desiresdesigner/twitter/com/ServerExample.java" />
-        <option value="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java" />
         <option value="$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java" />
+        <option value="$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java" />
+        <option value="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java" />
+        <option value="$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java" />
+        <option value="$PROJECT_DIR$/DDDBase/src/test/java/DDDBTest.java" />
+        <option value="$PROJECT_DIR$/DDDBase/src/main/java/DDDB/desiresdesigner/twitter/com/DDDB.java" />
       </list>
     </option>
   </component>
@@ -231,7 +243,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -311,6 +323,62 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DesiresDesigner-DataBase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DDDBase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DesiresDesigner-DataBase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DDDBase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -340,7 +408,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,52 +419,24 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="preferences.sourceCode" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/DDDBase/src/main/resources/httpcore-4.3.1.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="manager.desiresdesigner.twitter.com" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ShardTest">
-    <configuration default="false" name="ManagerTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="DDDBase" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ManagerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.DDDBTest">
     <configuration default="false" name="ServerExample" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -427,6 +467,28 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="shard.desiresdesigner.twitter.com.ShardStarter" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="DDDBase" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="manager.desiresdesigner.twitter.com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="manager.desiresdesigner.twitter.com.Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -470,24 +532,25 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="manager.desiresdesigner.twitter.com.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="manager.desiresdesigner.twitter.com.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration default="false" name="DDDBTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="DDDBase" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DDDBTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="DDDBase" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
       <envs />
+      <patterns />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -550,19 +613,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.ManagerTest" />
-      <item index="1" class="java.lang.String" itemvalue="Application.ServerExample" />
-      <item index="2" class="java.lang.String" itemvalue="Application.ShardStarter" />
+      <item index="0" class="java.lang.String" itemvalue="Application.ServerExample" />
+      <item index="1" class="java.lang.String" itemvalue="Application.ShardStarter" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Main" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.ShardTest" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DDDBTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ShardTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ShardStarter" />
-        <item index="3" class="java.lang.String" itemvalue="Application.ServerExample" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ManagerTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DDDBTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ShardStarter" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ShardTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="4" class="java.lang.String" itemvalue="Application.ServerExample" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
@@ -606,16 +669,16 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990307" sideWeight="0.49880096" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2907916" sideWeight="0.50119907" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28756058" sideWeight="0.50119907" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.49880096" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13749" sideWeight="0.7092084" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1398881" sideWeight="0.7124394" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1598721" sideWeight="0.7092084" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2907916" sideWeight="0.49880096" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1598721" sideWeight="0.7124394" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28756058" sideWeight="0.49880096" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32881355" sideWeight="0.49959967" order="1" side_tool="false" content_ui="tabs" />
@@ -666,7 +729,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation of Shard(without logic, only base) and ShardStarter + ShardTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding functional inside Shard" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -688,6 +751,7 @@
     <MESSAGE value="improved adding value" />
     <MESSAGE value="editing and completed tests" />
     <MESSAGE value="implementation of Shard(without logic, only base) and ShardStarter + ShardTest" />
+    <MESSAGE value="adding functional inside Shard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -697,18 +761,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DDDBase/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DDDBase/src/test/java/HelloWorldsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="20" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
@@ -773,34 +825,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/test/desiresdesigner/twitter/com/ServerExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="522" selection-end="522" vertical-scroll-proportion="0.55012226" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="0" selection-start="4057" selection-end="4057" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="33" selection-start="831" selection-end="831" vertical-scroll-proportion="0.0">
+        <state line="16" column="13" selection-start="536" selection-end="536" vertical-scroll-proportion="0.15625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/Shard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="61" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0">
+        <state line="28" column="4" selection-start="743" selection-end="743" vertical-scroll-proportion="0.27202073">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DDDBase/src/test/java/ShardTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="41" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
+        <state line="60" column="48" selection-start="1920" selection-end="1920" vertical-scroll-proportion="0.32846716">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/manager/desiresdesigner/twitter/com/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="42" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="28" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDDBase/src/test/java/DDDBTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="7" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDDBase/src/main/java/DDDB/desiresdesigner/twitter/com/DDDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="83" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.30656934">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

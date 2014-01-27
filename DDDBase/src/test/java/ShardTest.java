@@ -37,13 +37,6 @@ public class ShardTest {
 
     }
 
-    /*@Before
-    public void before() throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8100), 10);
-        server.createContext("/", new Shard());
-        server.start();
-    } */
-
     /*@Test
     public void addingTest() throws IOException {
 

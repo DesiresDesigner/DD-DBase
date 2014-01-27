@@ -25,11 +25,16 @@ public class Manager {
         gatherFreePointers();
     }
 
-    /*Manager(String dataStorage, String pointerStorage){
-        this.dataStorage = new File(dataStorage);
-        this.pointerStorage = new File(pointerStorage);
+    public Manager(String dataStorageName, String pointerStorageName, String freeSpaceStorageName){
+        dataStorage = new File(dataStorageName);
+        pointerStorage = new File(pointerStorageName);
+        freeSpace = new File(freeSpaceStorageName);
+
         keyPointers = new HashMap();
-    }*/
+        freePointers = new HashMap();
+        gatherKeyPointers();
+        gatherFreePointers();
+    }
 
     private boolean gatherKeyPointers(){
         String keys;
@@ -116,12 +121,6 @@ public class Manager {
         }
         return sb.toString();
     }
-
-    /*public void printFree(){
-        for (Long pos : freePointers.keySet()){
-            System.out.println(pos + " - " + freePointers.get(pos));
-        }
-    } */
 
     private long getPosition(int length){
         long bestPos = 0;
@@ -241,7 +240,7 @@ public class Manager {
     private boolean rewriteKeys(){
         PrintWriter keys;
         try {
-            keys = new PrintWriter(pointerStorage); //new FileWriter(pointerStorage, true)
+            keys = new PrintWriter(pointerStorage);
         } catch (Exception e) {
             System.out.println("Can't open pointers Storage");
             return false;

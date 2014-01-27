@@ -7,18 +7,18 @@ package shard.desiresdesigner.twitter.com;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import com.sun.net.httpserver.HttpServer;
+//import com.sun.net.httpserver.HttpServer;
 import manager.desiresdesigner.twitter.com.Manager;
-import org.apache.commons.io.IOUtils;
+/*import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClientBuilder;*/
 
 import java.io.*;
-import java.net.InetSocketAddress;
+//import java.net.InetSocketAddress;
 
 import java.io.IOException;
 
@@ -26,15 +26,18 @@ import java.io.IOException;
 public class Shard implements HttpHandler {
     Manager shardManager;
 
-
     public Shard(){
         shardManager = new Manager();
 
     }
 
+    public Shard(String dataStorageName, String pointerStorageName, String freeSpaceStorageName){
+        shardManager = new Manager(dataStorageName, pointerStorageName, freeSpaceStorageName);
+    }
+
     @Override
     public void handle(HttpExchange httpExchange) throws IOException {
-        String responseBody = "";
+        String responseBody;
 
         String command = httpExchange.getRequestHeaders().get("command").get(0);
         String key = "";

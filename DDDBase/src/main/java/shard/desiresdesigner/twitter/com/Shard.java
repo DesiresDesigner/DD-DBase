@@ -22,6 +22,12 @@ import java.io.*;
 
 import java.io.IOException;
 
+/*
+* 1 - key already exists
+* 2 - writing error
+* 3 - no such element
+* 4 - not valid command
+*/
 
 public class Shard implements HttpHandler {
     Manager shardManager;
@@ -49,22 +55,22 @@ public class Shard implements HttpHandler {
             value = httpExchange.getRequestHeaders().get("value").get(0);
         }
         if (command.equals("add")){
-            boolean res = shardManager.addValue(key, value);
+            int res = shardManager.addValue(key, value);
             responseBody = String.valueOf(res);
         }
         else if (command.equals("del")){
-            boolean res = shardManager.deleteValue(key);
+            int res = shardManager.deleteValue(key);
             responseBody = String.valueOf(res);
         }
         else if (command.equals("edit")){
-            boolean res = shardManager.editValue(key, value);
+            int res = shardManager.editValue(key, value);
             responseBody = String.valueOf(res);
         }
         else if (command.equals("get")){
             responseBody = shardManager.getValue(key);
         }
         else {
-            responseBody = "not valid command: " + command + ".";
+            responseBody = "4";
         }
 
         final Writer writer = new OutputStreamWriter(httpExchange.getResponseBody());

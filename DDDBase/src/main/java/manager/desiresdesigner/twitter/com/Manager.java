@@ -7,6 +7,14 @@ import java.util.*;
  * @author desiresdesigner
  * @since 1/6/14
  */
+
+/*
+* 1 - key already exists
+* 2 - writing error
+* 3 - no such element
+* 4 - not valid command
+*/
+
 public class Manager {
     private final File dataStorage;
     private final File pointerStorage;
@@ -132,7 +140,6 @@ public class Manager {
                     bestLeng = leng;
                     bestPos = pos;
                 }
-                //return pos;
             }
         }
         if (bestPos == 0)
@@ -140,10 +147,11 @@ public class Manager {
         return bestPos;
     }
 
-    public boolean addValue(String key, String value) {
+    public int addValue(String key, String value) {
         if (keyPointers.containsKey(key)){
             System.out.println("This key is already exist");
-            return false;
+            return 1;
+            //return false;
         }
         RandomAccessFile data;
         PrintWriter pointers;
@@ -159,19 +167,22 @@ public class Manager {
             data.close();
             pointers.close();
         } catch (FileNotFoundException notFound) {
-            System.out.println("Can't open data storage or pointers storage");
-            return false;
+            //System.out.println("Can't open data storage or pointers storage");
+            return 2;
+            //return false;
         } catch (IOException io) {
-            System.out.println("Writing error");
-            return false;
+            return 2;
+            //System.out.println("Writing error");
+            //return false;
         }
         freePointers.remove(dataPosition);
         rewriteFreeSpace();
 
-        return true;
+        return 0;
+        //return true;
     }
 
-    public String getValue(String key) throws NoSuchElementException, RuntimeException{
+    public String getValue(String key) throws RuntimeException{
         if (!keyPointers.containsKey(key))
             throw new NoSuchElementException();
         Long position = keyPointers.get(key);
@@ -194,9 +205,10 @@ public class Manager {
         return value;
     }
 
-    public boolean deleteValue(String key) throws IOException {
+    public int deleteValue(String key) throws IOException {
         if (!keyPointers.containsKey(key))
-            throw new NoSuchElementException();
+            return 3;
+            //throw new NoSuchElementException();
         long position = keyPointers.get(key);
         int size = 0;
         RandomAccessFile data = new RandomAccessFile(dataStorage, "rw");
@@ -209,14 +221,16 @@ public class Manager {
         try {
             free = new PrintWriter(new FileWriter(freeSpace, true));
         } catch (Exception e) {
-            System.out.println("Can't save changes");
-            return false;
+            return 2;
+            //System.out.println("Can't save changes");
+            //return false;
         }
         try{
             free.append(position + "-" + size + ";");
         } catch (Exception e){
-            System.out.println("Write error");
-            return false;
+            return 2;
+            //System.out.println("Write error");
+            //return false;
         }
         finally {
             free.close();
@@ -225,16 +239,20 @@ public class Manager {
         freePointers.put(position, size);
         keyPointers.remove(key);
         if (!rewriteKeys()){
-            System.out.println("Write error");
-            return false;
+            return 2;
+            //System.out.println("Write error");
+            //return false;
         }
-        return false;
+        return 0;
+        //return false;
     }
 
-    public boolean editValue(String key, String value) throws IOException {
-        deleteValue(key);
-        addValue(key, value);
-        return false;
+    public int editValue(String key, String value) throws IOException {
+        int res = deleteValue(key);
+        if (res != 0){
+            return res;
+        }
+        return addValue(key, value);
     }
 
     private boolean rewriteKeys(){

@@ -11,7 +11,7 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+//import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +21,12 @@ import java.util.List;
  * @since 1/27/14
  */
 
-
+/*
+* 1 - key already exists
+* 2 - writing error
+* 3 - no such element
+* 4 - not valid command
+*/
 
 public class DDDB {
     Manager shardManager = new Manager();
@@ -29,8 +34,6 @@ public class DDDB {
     private final HttpPost post;
     private HttpClient client;
     private List <HttpHost> httpHosts;
-    /*private HttpHost httpHost0;
-    private HttpHost httpHost1;*/
 
     public DDDB(){
         post = new HttpPost("/");
@@ -38,15 +41,13 @@ public class DDDB {
         httpHosts = new ArrayList();
         httpHosts.add(new HttpHost("localhost", 8000));
         httpHosts.add(new HttpHost("localhost", 8100));
-        /*httpHost0 = new HttpHost("localhost", 8000);
-        httpHost1 = new HttpHost("localhost", 8100);*/
     }
 
     public int addValue(String key, String value) throws IOException {
         int hashCode = key.hashCode();
         int shardNumber = hashCode % 3 - 1;
         if (shardNumber == -1){
-            System.out.println(shardManager.addValue(key, value));
+            return shardManager.addValue(key, value);
         }
         else {
             post.setHeader("key", key);
@@ -57,18 +58,45 @@ public class DDDB {
             final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
             ResponseHandler<String> handler = new BasicResponseHandler();
             String response = handler.handleResponse(execute);
-            System.out.println(response);
+            return Integer.parseInt(response);
         }
-
-        return hashCode;
     }
 
-    public void delValue(String key){
-
+    public int delValue(String key) throws IOException {
+        int hashCode = key.hashCode();
+        int shardNumber = hashCode % 3 - 1;
+        if (shardNumber == -1){
+            return shardManager.deleteValue(key);
+        }
+        else {
+            post.setHeader("key", key);
+            post.setHeader("command", "del");
+            String requestBody = "deleting value";
+            post.setEntity(new StringEntity(requestBody));
+            final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
+            ResponseHandler<String> handler = new BasicResponseHandler();
+            String response = handler.handleResponse(execute);
+            return Integer.parseInt(response);
+        }
     }
 
-    public void editValue(String key, String value){
-
+    public int editValue(String key, String value) throws IOException {
+        int hashCode = key.hashCode();
+        int shardNumber = hashCode % 3 - 1;
+        if (shardNumber == -1){
+            return shardManager.editValue(key, value);
+        }
+        else {
+            post.setHeader("key", key);
+            post.setHeader("value", value);
+            post.setHeader("command", "edit");
+            String requestBody = "editing value";
+            post.setEntity(new StringEntity(requestBody));
+            final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
+            ResponseHandler<String> handler = new BasicResponseHandler();
+            String response = handler.handleResponse(execute);
+            return Integer.parseInt(response);
+        }
     }
 
     public String getValue(String key) throws IOException {

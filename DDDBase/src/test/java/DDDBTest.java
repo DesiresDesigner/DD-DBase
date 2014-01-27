@@ -31,7 +31,7 @@ public class DDDBTest {
         }
     }*/
 
-    @Test
+    /*@Test
     public void getTest() throws IOException {
         for (int i = 0; i < 100; i ++){
             String key = "Key" + i;
@@ -39,5 +39,22 @@ public class DDDBTest {
             String res = db.getValue(key);
             assertEquals(res, value);
         }
+    }*/
+
+    @Test
+    public void editTest() throws IOException {
+        for (int i = 0; i < 100; i ++){
+            String key = "Key" + i;
+            String value = "_myValue" + (i + 100);
+            db.editValue(key, value);
+        }
+        for (int i = 0; i < 100; i ++){
+            String key = "Key" + i;
+            String value = "_myValue" + (i + 100);
+            String res = db.getValue(key);
+            assertEquals(res, value);
+        }
     }
+
+
 }

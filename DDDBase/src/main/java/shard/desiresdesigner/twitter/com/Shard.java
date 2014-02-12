@@ -69,6 +69,9 @@ public class Shard implements HttpHandler {
         else if (command.equals("get")){
             responseBody = shardManager.getValue(key);
         }
+        else if (command.equals("getKeys")){
+            responseBody = shardManager.getKeys();
+        }
         else {
             responseBody = "4";
         }

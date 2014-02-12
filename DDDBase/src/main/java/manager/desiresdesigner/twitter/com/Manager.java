@@ -151,7 +151,6 @@ public class Manager {
         if (keyPointers.containsKey(key)){
             System.out.println("This key is already exist");
             return 1;
-            //return false;
         }
         RandomAccessFile data;
         PrintWriter pointers;
@@ -183,8 +182,10 @@ public class Manager {
     }
 
     public String getValue(String key) throws RuntimeException{
-        if (!keyPointers.containsKey(key))
+        if (!keyPointers.containsKey(key)){
+            System.out.println("no such key: " + key);
             throw new NoSuchElementException();
+        }
         Long position = keyPointers.get(key);
         String value = "";
         try {
@@ -299,5 +300,17 @@ public class Manager {
             free.close();
         }
         return true;
+    }
+
+    public String getKeys(){
+        String res = "";
+        for (String key : keyPointers.keySet()){
+            if (res == ""){
+                res = key;
+            } else {
+                res += "-" + key;
+            }
+        }
+        return res;
     }
 }

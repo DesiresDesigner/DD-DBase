@@ -21,7 +21,7 @@ public class ManagerTest {
         testController = new Manager();
     }
 
-    @Test
+    /*@Test
     public void addingTest(){
         for (int i = 0; i < 100; i++){
             testController.addValue(String.valueOf(i), String.valueOf(i));
@@ -50,6 +50,11 @@ public class ManagerTest {
         for (int i = 50; i < 100; i++){
             assertEquals(testController.getValue(String.valueOf(i)), String.valueOf(i-20));
         }
+    }*/
+
+    @Test
+    public void getKeysTest(){
+        System.out.println(testController.getKeys());
     }
 
 }

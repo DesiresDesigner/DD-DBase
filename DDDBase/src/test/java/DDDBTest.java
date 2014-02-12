@@ -21,15 +21,61 @@ public class DDDBTest {
         db = new DDDB();
     }
 
-    /*@Test
+    @Test
     public void addTest() throws IOException {
         for (int i = 0; i < 100; i ++){
             String key = "Key" + i;
             String value = "_myValue" + i;
             int res = db.addValue(key, value);
-            assertEquals(res, key.hashCode());
+            assertEquals(res, 0);
         }
-    }*/
+    }
+
+    @Test
+    public void addSecondShardTest() throws IOException {
+        db.addShard("localhost", 8000);
+        for (int i = 100; i < 200; i ++){
+            String key = "Key" + i;
+            String value = "_myValue" + i;
+            int res = db.addValue(key, value);
+            assertEquals(res, 0);
+        }
+    }
+
+    @Test
+    public void getFrom2ShardsTest() throws IOException {
+        db.addShard("localhost", 8000);
+        for (int i = 0; i < 200; i ++){
+            String key = "Key" + i;
+            String value = "_myValue" + i;
+            String res = db.getValue(key);
+            assertEquals(res, value);
+        }
+    }
+
+    @Test
+    public void addThridShardTest() throws IOException {
+        db.addShard("localhost", 8000);
+        db.addShard("localhost", 8100);
+        for (int i = 200; i < 300; i ++){
+            String key = "Key" + i;
+            String value = "_myValue" + i;
+            int res = db.addValue(key, value);
+            assertEquals(res, 0);
+        }
+    }
+
+    @Test
+    public void getFrom3ShardsTest() throws IOException {
+        db.addShard("localhost", 8000);
+        db.addShard("localhost", 8100);
+        for (int i = 200; i < 300; i ++){
+            String key = "Key" + i;
+            String value = "_myValue" + i;
+            String res = db.getValue(key);
+            assertEquals(res, value);
+        }
+    }
 
     /*@Test
     public void getTest() throws IOException {
@@ -41,7 +87,7 @@ public class DDDBTest {
         }
     }*/
 
-    @Test
+    /*@Test
     public void editTest() throws IOException {
         for (int i = 0; i < 100; i ++){
             String key = "Key" + i;
@@ -54,7 +100,6 @@ public class DDDBTest {
             String res = db.getValue(key);
             assertEquals(res, value);
         }
-    }
-
+    }*/
 
 }

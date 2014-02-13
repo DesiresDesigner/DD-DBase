@@ -11,7 +11,8 @@
     <file path="/ManagerTest.java" changelist="56db2654-e989-43ad-8d47-d450311c4b59" time="1392203184914" ignored="false" />
     <file path="/Dummy.txt" changelist="56db2654-e989-43ad-8d47-d450311c4b59" time="1392230039982" ignored="false" />
     <file path="/fragment.java" changelist="56db2654-e989-43ad-8d47-d450311c4b59" time="1392235455898" ignored="false" />
-    <file path="/DataPartition.java" changelist="56db2654-e989-43ad-8d47-d450311c4b59" time="1392312580269" ignored="false" />
+    <file path="/DataPartition.java" changelist="56db2654-e989-43ad-8d47-d450311c4b59" time="1392317202772" ignored="false" />
+    <file path="/DataPartitionTest.java" changelist="56db2654-e989-43ad-8d47-d450311c4b59" time="1392318383705" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,16 +96,29 @@
       <file leaf-file-name="DataPartition.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dataPartition/desiresdesigner/twitter/com/DataPartition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="38" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="25" column="54" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DDDBTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DataPartitionTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DataPartitionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="63" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.80569947">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DDDBTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/DDDBTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="16" selection-start="1968" selection-end="1968" vertical-scroll-proportion="1.7202072">
+            <state line="31" column="5" selection-start="272" selection-end="661" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -124,9 +138,10 @@
         <option value="$PROJECT_DIR$/src/test/java/ManagerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java" />
         <option value="$PROJECT_DIR$/src/main/java/manager/desiresdesigner/twitter/com/Manager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dataPartition/desiresdesigner/twitter/com/DataPartition.java" />
         <option value="$PROJECT_DIR$/src/test/java/DDDBTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/DDDB/desiresdesigner/twitter/com/DDDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dataPartition/desiresdesigner/twitter/com/DataPartition.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DataPartitionTest.java" />
       </list>
     </option>
   </component>
@@ -268,6 +283,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DDDBase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DDDBase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -286,7 +327,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.DDDBTest">
+  <component name="RunManager" selected="JUnit.DataPartitionTest">
     <configuration default="false" name="ShardStarter" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -361,6 +402,29 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="DataPartitionTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="DDDBase" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DataPartitionTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -418,16 +482,18 @@
       <patterns />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.ShardStarter" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.DDDBTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.ManagerTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DataPartitionTest" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DDDBTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ShardStarter" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ManagerTest" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DataPartitionTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DDDBTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ShardStarter" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ManagerTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
@@ -554,15 +620,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/DDDB/desiresdesigner/twitter/com/DDDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="6" selection-start="2443" selection-end="2443" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DDDBTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="14" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
@@ -637,16 +694,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/manager/desiresdesigner/twitter/com/Manager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="54" selection-start="5324" selection-end="5324" vertical-scroll-proportion="0.038860105">
+        <state line="1" column="14" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dataPartition/desiresdesigner/twitter/com/DataPartition.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/DDDBTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="38" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
+        <state line="31" column="5" selection-start="272" selection-end="661" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -660,17 +717,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/shard/desiresdesigner/twitter/com/ShardStarter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/manager/desiresdesigner/twitter/com/Manager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="14" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
+        <state line="29" column="36" selection-start="629" selection-end="643" vertical-scroll-proportion="0.66481996">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DDDBTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dataPartition/desiresdesigner/twitter/com/DataPartition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="16" selection-start="1968" selection-end="1968" vertical-scroll-proportion="1.7202072">
-          <folding />
+        <state line="25" column="54" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DataPartitionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="63" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.80569947">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

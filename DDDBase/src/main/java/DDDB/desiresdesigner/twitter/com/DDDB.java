@@ -1,5 +1,6 @@
 package DDDB.desiresdesigner.twitter.com;
 
+import dataPartition.desiresdesigner.twitter.com.DataPartition;
 import manager.desiresdesigner.twitter.com.Manager;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
@@ -11,8 +12,6 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.IOException;
-//import java.io.UnsupportedEncodingException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -43,14 +42,12 @@ public class DDDB {
         post = new HttpPost("/");
         client = HttpClientBuilder.create().build();
         httpHosts = new ArrayList();
-        //httpHosts.add(new HttpHost("localhost", 8000));
-        //httpHosts.add(new HttpHost("localhost", 8100));
     }
 
     public int addShard(String address, int port) throws IOException {
         httpHosts.add(new HttpHost(address, port));
         ++shardAmount;
-        for (int i = -1; i < httpHosts.size() - 1; i ++){
+        for (int i = -1; i < httpHosts.size(); i ++){
             String keysString = getKeysFromShard(i);
             if (keysString == "4")
                     return 4;
@@ -197,7 +194,8 @@ public class DDDB {
     }
 
     private int getShardNumberForKey(String key){
-        int hashCode = key.hashCode();
-        return (int)((hashCode + Math.pow(2, 31)) % shardAmount - 1);
+        return DataPartition.simpleHash(key, shardAmount);
+        /*int hashCode = key.hashCode();
+        return (int)((hashCode + Math.pow(2, 31)) % shardAmount - 1);*/
     }
 }

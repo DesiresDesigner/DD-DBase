@@ -53,7 +53,7 @@ public class DDDBTest {
         }
     }
 
-    @Test
+    /*@Test
     public void addThridShardTest() throws IOException {
         db.addShard("localhost", 8000);
         db.addShard("localhost", 8100);

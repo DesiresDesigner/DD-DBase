@@ -22,6 +22,52 @@ public class DataPartitionTest {
         int shard2 = 0;
         int shard3 = 0;
         for (int i = 0; i < 100; i ++){
+            arr[i] = DataPartition.simpleHash("index" + i, 3);
+        }
+        for (int i = 0; i < 100; i ++){
+            assertEquals(arr[i], DataPartition.simpleHash("index" + i, 3));
+            if (arr[i] == -1)
+                ++shard1;
+            else if (arr[i] == 0)
+                ++shard2;
+            else if (arr[i] == 1)
+                ++shard3;
+        }
+        System.out.println("shard1: " + shard1);
+        System.out.println("shard2: " + shard2);
+        System.out.println("shard3: " + shard3);
+    }
+
+    /*@Test
+    public void hashMapTest() throws IOException {
+        int[] arr = new int[100];
+        int shard1 = 0;
+        int shard2 = 0;
+        int shard3 = 0;
+        for (int i = 0; i < 100; i ++){
+            arr[i] = DataPartition.hashMap("index" + i, 3);
+        }
+        for (int i = 0; i < 100; i ++){
+            assertEquals(arr[i], DataPartition.hashMap("index" + i, 3));
+            if (arr[i] == -1)
+                ++shard1;
+            else if (arr[i] == 0)
+                ++shard2;
+            else if (arr[i] == 1)
+                ++shard3;
+        }
+        System.out.println("shard1: " + shard1);
+        System.out.println("shard2: " + shard2);
+        System.out.println("shard3: " + shard3);
+    }*/
+
+    /*@Test
+    public void hashRingTest() throws IOException {
+        int[] arr = new int[100];
+        int shard1 = 0;
+        int shard2 = 0;
+        int shard3 = 0;
+        for (int i = 0; i < 100; i ++){
             arr[i] = DataPartition.hashRing("index" + i, 3);
         }
         for (int i = 0; i < 100; i ++){
@@ -36,5 +82,5 @@ public class DataPartitionTest {
         System.out.println("shard1: " + shard1);
         System.out.println("shard2: " + shard2);
         System.out.println("shard3: " + shard3);
-    }
+    }*/
 }

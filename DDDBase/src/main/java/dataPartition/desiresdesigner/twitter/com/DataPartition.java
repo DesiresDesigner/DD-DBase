@@ -2,8 +2,6 @@ package dataPartition.desiresdesigner.twitter.com;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
@@ -12,7 +10,8 @@ import java.util.TreeMap;
  * @since 2/13/14
  */
 public class DataPartition {
-    private static SortedMap<Long, Integer> hashRingMap = new TreeMap();
+    private static SortedMap<Long, Integer> hashMapTree = new TreeMap();
+    private static SortedMap<Integer, Integer> hashRingTree = new TreeMap();
     private static int shardsAmount = 0;
 
     public static int simpleHash(String key, int shardsAmount){
@@ -20,34 +19,54 @@ public class DataPartition {
         return (int)((hashCode + Math.pow(2, 31)) % shardsAmount - 1);
     }
 
-    public static int hashRing(String key, int shardsAmount){
+    public static int hashMap(String key, int shardsAmount){ // Simple implementation of Redis algorithm
+        if (DataPartition.shardsAmount == 0 || DataPartition.shardsAmount != shardsAmount){
+            constructHashMap(shardsAmount);
+            DataPartition.shardsAmount = shardsAmount;
+        }
+        SortedMap<Long, Integer> tail = hashMapTree.tailMap(md5HashCode(key));
+        if (tail.isEmpty()) {
+            return hashMapTree.get(hashMapTree.firstKey());
+        }
+        return tail.get(tail.firstKey());
+    }
+
+    public static int hashRing(String key, int shardsAmount){ //by range (MongoDB simple implementation)
         if (DataPartition.shardsAmount == 0 || DataPartition.shardsAmount != shardsAmount){
             constructHashRing(shardsAmount);
             DataPartition.shardsAmount = shardsAmount;
         }
-        SortedMap<Long, Integer> tail = hashRingMap.tailMap(md5HashCode(key));
+        SortedMap<Integer, Integer> tail = hashRingTree.tailMap(key.hashCode());
         if (tail.isEmpty()) {
-            return hashRingMap.get(hashRingMap.firstKey());
+            return hashRingTree.get(hashRingTree.firstKey());
         }
         return tail.get(tail.firstKey());
     }
 
     private static void constructHashRing(int shardsAmount){
+        int shardDataAmount = (int)(Math.pow(2, 62)/shardsAmount);
         for (int i = -1; i < shardsAmount - 1; i ++){
-            hashRingMap.put(md5HashCode("SHARD-" + i), i);
+            int node = (int)Math.pow(-2, 31) + shardDataAmount*(i + 1);
+            hashRingTree.put(node, i);
+        }
+    }
+
+    private static void constructHashMap(int shardsAmount){
+        for (int i = -1; i < shardsAmount - 1; i ++){
+            hashMapTree.put(md5HashCode("SHARD-" + i), i);
         }
     }
 
     private static long md5HashCode(String str){
         MessageDigest md5 ;
-        StringBuffer  hexString = new StringBuffer();
+        StringBuffer hexString = new StringBuffer();
         try {
             md5 = MessageDigest.getInstance("md5");
             md5.reset();
             md5.update(str.getBytes());
             byte messageDigest[] = md5.digest();
-            for (int i = 0; i < messageDigest.length; i++) {
-                hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
+            for (byte aMessageDigest : messageDigest) {
+                hexString.append(Integer.toHexString(0xFF & aMessageDigest));
             }
             return ((long) (messageDigest[3] & 0xFF) << 24)
                     | ((long) (messageDigest[2] & 0xFF) << 16)

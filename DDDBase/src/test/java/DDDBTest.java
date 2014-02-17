@@ -21,7 +21,17 @@ public class DDDBTest {
         db = new DDDB();
     }
 
-    @Test
+    /*@Test
+    public void addContent() throws IOException {
+        for (int i = 0; i < 100000; i ++){
+            String key = "Key" + i;
+            String value = "_myValue" + i;
+            int res = db.addValue(key, value);
+            assertEquals(res, 0);
+        }
+    }
+
+    /*@Test
     public void addTest() throws IOException {
         for (int i = 0; i < 100; i ++){
             String key = "Key" + i;
@@ -53,8 +63,8 @@ public class DDDBTest {
         }
     }
 
-    /*@Test
-    public void addThridShardTest() throws IOException {
+    @Test
+    public void addThirdShardTest() throws IOException {
         db.addShard("localhost", 8000);
         db.addShard("localhost", 8100);
         for (int i = 200; i < 300; i ++){
@@ -90,7 +100,8 @@ public class DDDBTest {
     /*@Test
     public void editTest() throws IOException {
         for (int i = 0; i < 100; i ++){
-            String key = "Key" + i;
+
+           String key = "Key" + i;
             String value = "_myValue" + (i + 100);
             db.editValue(key, value);
         }

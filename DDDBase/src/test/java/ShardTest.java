@@ -7,14 +7,12 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.HttpClientBuilder;
-//import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import shard.desiresdesigner.twitter.com.Shard;
 
 import java.io.IOException;
-//import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 
 import static junit.framework.Assert.assertEquals;

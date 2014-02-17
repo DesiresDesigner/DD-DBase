@@ -117,7 +117,7 @@ public class DDDB {
         }
     }
 
-    public String getValue(String key) throws IOException {
+    public String getValue(String key) throws IOException { //
         return getValueFromShard(key, getShardNumberForKey(key));
         /*if (shardNumber == -1){
             return shardManager.getValue(key);

@@ -14,7 +14,7 @@ public class DataPartition {
     private static SortedMap<Integer, Integer> hashRingTree = new TreeMap();
     private static int shardsAmount = 0;
 
-    public static int simpleHash(String key, int shardsAmount){
+    public static int simpleHash(String key, int shardsAmount){ // Simple implementation by hash%n
         int hashCode = key.hashCode();
         return (int)((hashCode + Math.pow(2, 31)) % shardsAmount - 1);
     }

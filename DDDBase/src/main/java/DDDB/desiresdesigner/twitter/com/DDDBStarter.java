@@ -27,7 +27,7 @@ public class DDDBStarter {
     }
 
     private static void createServer(int port) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(port), 10);
+        HttpServer server = HttpServer.create(new InetSocketAddress(port), 100);
         server.createContext("/", new DDDBServer());
         server.start();
     }

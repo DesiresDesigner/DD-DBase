@@ -57,20 +57,25 @@ public class Shard implements HttpHandler {
         if (command.equals("add")){
             int res = shardManager.addValue(key, value);
             responseBody = String.valueOf(res);
+            System.out.println("add(" + key + ", " + value + ")");
         }
         else if (command.equals("del")){
             int res = shardManager.deleteValue(key);
             responseBody = String.valueOf(res);
+            System.out.println("del(" + key + ")");
         }
         else if (command.equals("edit")){
             int res = shardManager.editValue(key, value);
             responseBody = String.valueOf(res);
+            System.out.println("edit(" + key + ", " + value + ")");
         }
         else if (command.equals("get")){
             responseBody = shardManager.getValue(key);
+            System.out.println("get(" + key + ")");
         }
         else if (command.equals("getKeys")){
             responseBody = shardManager.getKeys();
+            System.out.println("getKeys");
         }
         else {
             responseBody = "4";

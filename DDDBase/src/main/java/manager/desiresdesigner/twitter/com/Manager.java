@@ -183,8 +183,9 @@ public class Manager {
 
     public String getValue(String key) throws RuntimeException{
         if (!keyPointers.containsKey(key)){
-            System.out.println("no such key: " + key);
-            throw new NoSuchElementException();
+            System.out.println("No such key: " + key);
+            return "3";
+            //throw new NoSuchElementException();
         }
         Long position = keyPointers.get(key);
         String value = "";
@@ -209,7 +210,6 @@ public class Manager {
     public int deleteValue(String key) throws IOException {
         if (!keyPointers.containsKey(key))
             return 3;
-            //throw new NoSuchElementException();
         long position = keyPointers.get(key);
         int size = 0;
         RandomAccessFile data = new RandomAccessFile(dataStorage, "rw");

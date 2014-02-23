@@ -32,18 +32,20 @@ public class DDDBStarterTest {
 
     @Test
     public void commonTest() throws IOException {
-        //HttpServer server = HttpServer.create(new InetSocketAddress(8000), 10);
-        //server.createContext("/", new Shard());
-        //server.start();
+
+        String requestBody;
+        HttpResponse execute;
+        ResponseHandler<String> handler;
+        String response;
 
         post.setHeader("key", "123");
         post.setHeader("value", "Some_value");
         post.setHeader("command", "add");
-        String requestBody = "Adding value";
+        requestBody = "Adding value";
         post.setEntity(new StringEntity(requestBody));
-        HttpResponse execute = client.execute(httpHost, post);
-        ResponseHandler<String> handler = new BasicResponseHandler();
-        String response = handler.handleResponse(execute);
+        execute = client.execute(httpHost, post);
+        handler = new BasicResponseHandler();
+        response = handler.handleResponse(execute);
 
         System.out.println("Adding: " + response);
         assertEquals(response, "0");
@@ -69,6 +71,7 @@ public class DDDBStarterTest {
         response = handler.handleResponse(execute);
 
         System.out.println("Getting: " + response);
+        //assertEquals(response, "_myValue1"); Some_new_value
         assertEquals(response, "Some_new_value");
 
         post.setHeader("key", "123");
@@ -81,7 +84,5 @@ public class DDDBStarterTest {
 
         System.out.println("Deleting: " + response);
         assertEquals(response, "0");
-
-        //server.stop(0);
     }
 }

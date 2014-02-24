@@ -31,8 +31,7 @@ import java.util.Set;
 */
 
 public class DDDB {
-    Manager shardManager = new Manager();
-    int shardAmount = 1;
+    int shardAmount = 0;
 
     private final HttpPost post;
     private HttpClient client;
@@ -47,7 +46,7 @@ public class DDDB {
     public int addShard(String address, int port) throws IOException {
         httpHosts.add(new HttpHost(address, port));
         ++shardAmount;
-        for (int i = -1; i < httpHosts.size(); i ++){
+        for (int i = 0; i < httpHosts.size(); i ++){
             String keysString = getKeysFromShard(i);
             if (keysString == "4")
                     return 4;
@@ -65,21 +64,20 @@ public class DDDB {
     }
 
     public int addValue(String key, String value) throws IOException {
+        if (shardAmount == 0){
+            System.out.println("No shards");
+            return 5;
+        }
         int shardNumber = getShardNumberForKey(key);
-        if (shardNumber == -1){
-            return shardManager.addValue(key, value);
-        }
-        else {
-            post.setHeader("key", key);
-            post.setHeader("value", value);
-            post.setHeader("command", "add");
-            String requestBody = "adding value";
-            post.setEntity(new StringEntity(requestBody));
-            final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
-            ResponseHandler<String> handler = new BasicResponseHandler();
-            String response = handler.handleResponse(execute);
-            return Integer.parseInt(response);
-        }
+        post.setHeader("key", key);
+        post.setHeader("value", value);
+        post.setHeader("command", "add");
+        String requestBody = "adding value";
+        post.setEntity(new StringEntity(requestBody));
+        final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
+        ResponseHandler<String> handler = new BasicResponseHandler();
+        String response = handler.handleResponse(execute);
+        return Integer.parseInt(response);
     }
 
     public int delValue(String key) throws IOException {
@@ -100,21 +98,20 @@ public class DDDB {
     }
 
     public int editValue(String key, String value) throws IOException {
+        if (shardAmount == 0){
+            System.out.println("No shards");
+            return 5;
+        }
         int shardNumber = getShardNumberForKey(key);
-        if (shardNumber == -1){
-            return shardManager.editValue(key, value);
-        }
-        else {
-            post.setHeader("key", key);
-            post.setHeader("value", value);
-            post.setHeader("command", "edit");
-            String requestBody = "editing value";
-            post.setEntity(new StringEntity(requestBody));
-            final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
-            ResponseHandler<String> handler = new BasicResponseHandler();
-            String response = handler.handleResponse(execute);
-            return Integer.parseInt(response);
-        }
+        post.setHeader("key", key);
+        post.setHeader("value", value);
+        post.setHeader("command", "edit");
+        String requestBody = "editing value";
+        post.setEntity(new StringEntity(requestBody));
+        final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
+        ResponseHandler<String> handler = new BasicResponseHandler();
+        String response = handler.handleResponse(execute);
+        return Integer.parseInt(response);
     }
 
     public String getValue(String key) throws IOException { //
@@ -135,35 +132,33 @@ public class DDDB {
     }
 
     private int delValueOnShard(String key, int shardNumber) throws IOException {
-        if (shardNumber == -1){
-            return shardManager.deleteValue(key);
+        if (shardAmount == 0){
+            System.out.println("No shards");
+            return 5;
         }
-        else {
-            post.setHeader("key", key);
-            post.setHeader("command", "del");
-            String requestBody = "deleting value";
-            post.setEntity(new StringEntity(requestBody));
-            final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
-            ResponseHandler<String> handler = new BasicResponseHandler();
-            String response = handler.handleResponse(execute);
-            return Integer.parseInt(response);
-        }
+        post.setHeader("key", key);
+        post.setHeader("command", "del");
+        String requestBody = "deleting value";
+        post.setEntity(new StringEntity(requestBody));
+        final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
+        ResponseHandler<String> handler = new BasicResponseHandler();
+        String response = handler.handleResponse(execute);
+        return Integer.parseInt(response);
     }
 
     private String getValueFromShard(String key, int shardNumber) throws IOException {
-        if (shardNumber == -1){
-            return shardManager.getValue(key);
+        if (shardAmount == 0){
+            System.out.println("No shards");
+            return "5";
         }
-        else {
-            post.setHeader("key", key);
-            post.setHeader("command", "get");
-            String requestBody = "getting value";
-            post.setEntity(new StringEntity(requestBody));
-            final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
-            ResponseHandler<String> handler = new BasicResponseHandler();
-            String response = handler.handleResponse(execute);
-            return response;
-        }
+        post.setHeader("key", key);
+        post.setHeader("command", "get");
+        String requestBody = "getting value";
+        post.setEntity(new StringEntity(requestBody));
+        final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
+        ResponseHandler<String> handler = new BasicResponseHandler();
+        String response = handler.handleResponse(execute);
+        return response;
     }
 
     private Set parseKeys(String keys){
@@ -181,21 +176,19 @@ public class DDDB {
     }
 
     private String getKeysFromShard(int shardNumber) throws IOException {
-        if (shardNumber == -1){
-            return shardManager.getKeys();
-        } else {
-            post.setHeader("command", "getKeys");
-            String requestBody = "getting keys";
-            post.setEntity(new StringEntity(requestBody));
-            final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
-            ResponseHandler<String> handler = new BasicResponseHandler();
-            return handler.handleResponse(execute);
+        if (shardAmount == 0){
+            System.out.println("No shards");
+            return "5";
         }
+        post.setHeader("command", "getKeys");
+        String requestBody = "getting keys";
+        post.setEntity(new StringEntity(requestBody));
+        final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
+        ResponseHandler<String> handler = new BasicResponseHandler();
+        return handler.handleResponse(execute);
     }
 
     private int getShardNumberForKey(String key){
         return DataPartition.simpleHash(key, shardAmount);
-        /*int hashCode = key.hashCode();
-        return (int)((hashCode + Math.pow(2, 31)) % shardAmount - 1);*/
     }
 }

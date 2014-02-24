@@ -38,51 +38,76 @@ public class DDDBStarterTest {
         ResponseHandler<String> handler;
         String response;
 
-        post.setHeader("key", "123");
-        post.setHeader("value", "Some_value");
-        post.setHeader("command", "add");
+        post.setHeader("address", "localhost");
+        post.setHeader("port", "8100");
+        post.setHeader("command", "addShard");
         requestBody = "Adding value";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
         handler = new BasicResponseHandler();
         response = handler.handleResponse(execute);
 
-        System.out.println("Adding: " + response);
-        assertEquals(response, "0");
+        System.out.println("Adding shard: " + response);
 
-        post.setHeader("key", "123");
-        post.setHeader("value", "Some_new_value");
-        post.setHeader("command", "edit");
-        requestBody = "editing value";
+        post.setHeader("address", "localhost");
+        post.setHeader("port", "8200");
+        post.setHeader("command", "addShard");
+        requestBody = "Adding value";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
         handler = new BasicResponseHandler();
         response = handler.handleResponse(execute);
 
-        System.out.println("Editing: " + response);
-        assertEquals(response, "0");
+        System.out.println("Adding shard: " + response);
 
-        post.setHeader("key", "123");
-        post.setHeader("command", "get");
-        requestBody = "getting value";
-        post.setEntity(new StringEntity(requestBody));
-        execute = client.execute(httpHost, post);
-        handler = new BasicResponseHandler();
-        response = handler.handleResponse(execute);
+        for (int i = 0; i < 100; i ++){
+            post.setHeader("key", "newKey" + i);
+            post.setHeader("value", "SomeValue" + i);
+            post.setHeader("command", "add");
+            requestBody = "Adding value";
+            post.setEntity(new StringEntity(requestBody));
+            execute = client.execute(httpHost, post);
+            handler = new BasicResponseHandler();
+            response = handler.handleResponse(execute);
 
-        System.out.println("Getting: " + response);
-        //assertEquals(response, "_myValue1"); Some_new_value
-        assertEquals(response, "Some_new_value");
+            assertEquals(response, "0");
+        }
 
-        post.setHeader("key", "123");
-        post.setHeader("command", "del");
-        requestBody = "deleting value";
-        post.setEntity(new StringEntity(requestBody));
-        execute = client.execute(httpHost, post);
-        handler = new BasicResponseHandler();
-        response = handler.handleResponse(execute);
+        for (int i = 0; i < 100; i ++){
+            post.setHeader("key", "newKey" + i);
+            post.setHeader("value", "SomeValue" + (i+100));
+            post.setHeader("command", "edit");
+            requestBody = "editing value";
+            post.setEntity(new StringEntity(requestBody));
+            execute = client.execute(httpHost, post);
+            handler = new BasicResponseHandler();
+            response = handler.handleResponse(execute);
 
-        System.out.println("Deleting: " + response);
-        assertEquals(response, "0");
+            assertEquals(response, "0");
+        }
+
+        for (int i = 0; i < 100; i ++){
+            post.setHeader("key", "newKey" + i);
+            post.setHeader("command", "get");
+            requestBody = "getting value";
+            post.setEntity(new StringEntity(requestBody));
+            execute = client.execute(httpHost, post);
+            handler = new BasicResponseHandler();
+            response = handler.handleResponse(execute);
+
+            assertEquals(response, "SomeValue" + (i+100));
+        }
+
+        for (int i = 0; i < 100; i ++){
+            post.setHeader("key", "newKey" + i);
+            post.setHeader("command", "del");
+            requestBody = "deleting value";
+            post.setEntity(new StringEntity(requestBody));
+            execute = client.execute(httpHost, post);
+            handler = new BasicResponseHandler();
+            response = handler.handleResponse(execute);
+
+            assertEquals(response, "0");
+        }
     }
 }

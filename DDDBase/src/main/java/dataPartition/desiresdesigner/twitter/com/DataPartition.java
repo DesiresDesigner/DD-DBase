@@ -16,7 +16,7 @@ public class DataPartition {
 
     public static int simpleHash(String key, int shardsAmount){ // Simple implementation by hash%n
         int hashCode = key.hashCode();
-        return (int)((hashCode + Math.pow(2, 31)) % shardsAmount - 1);
+        return (int)((hashCode + Math.pow(2, 31)) % shardsAmount);
     }
 
     public static int hashMap(String key, int shardsAmount){ // Simple implementation of Redis algorithm
@@ -43,16 +43,20 @@ public class DataPartition {
         return tail.get(tail.firstKey());
     }
 
+    public static void setShardsAmount(int shardsAmount){
+        DataPartition.shardsAmount = shardsAmount;
+    }
+
     private static void constructHashRing(int shardsAmount){
         int shardDataAmount = (int)(Math.pow(2, 62)/shardsAmount);
-        for (int i = -1; i < shardsAmount - 1; i ++){
+        for (int i = 0; i < shardsAmount; i ++){
             int node = (int)Math.pow(-2, 31) + shardDataAmount*(i + 1);
             hashRingTree.put(node, i);
         }
     }
 
     private static void constructHashMap(int shardsAmount){
-        for (int i = -1; i < shardsAmount - 1; i ++){
+        for (int i = 0; i < shardsAmount; i ++){
             hashMapTree.put(md5HashCode("SHARD-" + i), i);
         }
     }

@@ -28,7 +28,8 @@ public class DDDBServer implements HttpHandler {
 
         //new Thread(new DDDBQueryProcessor(db, httpExchange));
 
-        System.out.println("New request. Time: " + System.nanoTime());
+        long startTime = System.nanoTime();
+        //System.out.println("New request. Time: " + System.nanoTime());
         String responseBody;
 
         String command = httpExchange.getRequestHeaders().get("command").get(0);
@@ -89,6 +90,8 @@ public class DDDBServer implements HttpHandler {
         httpExchange.getResponseBody().flush();
         httpExchange.getResponseBody().close();
         httpExchange.close();
-        System.out.println("Processing is complete. Time: " + System.nanoTime());
+
+        System.out.println("Processing is complete. Work time: " + (System.nanoTime() - startTime));
+        //System.out.println("Processing is complete. Time: " + System.nanoTime());
     }
 }

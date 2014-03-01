@@ -190,5 +190,6 @@ public class DDDB {
 
     private int getShardNumberForKey(String key){
         return DataPartition.simpleHash(key, shardAmount);
+        //return DataPartition.hashMap(key, shardAmount);
     }
 }

@@ -16,6 +16,7 @@ import java.util.*;
 */
 
 public class Manager {
+    int amount = 0;
     private final File dataStorage;
     private final File pointerStorage;
     private final File freeSpace;
@@ -152,6 +153,7 @@ public class Manager {
             System.out.println("This key is already exist");
             return 1;
         }
+
         RandomAccessFile data;
         PrintWriter pointers;
         long dataPosition = getPosition(value.length());
@@ -177,6 +179,8 @@ public class Manager {
         freePointers.remove(dataPosition);
         rewriteFreeSpace();
 
+        ++amount;
+        System.out.println("Amount: " + amount);
         return 0;
         //return true;
     }
@@ -244,6 +248,8 @@ public class Manager {
             //System.out.println("Write error");
             //return false;
         }
+        --amount;
+        System.out.println("Amount: " + amount);
         return 0;
         //return false;
     }

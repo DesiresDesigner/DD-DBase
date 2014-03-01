@@ -38,10 +38,10 @@ public class DDDBStarterTest {
         ResponseHandler<String> handler;
         String response;
 
-        post.setHeader("address", "localhost");
+        post.setHeader("address", "192.168.50.174");
         post.setHeader("port", "8100");
         post.setHeader("command", "addShard");
-        requestBody = "Adding value";
+        requestBody = "Adding shard";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
         handler = new BasicResponseHandler();
@@ -49,10 +49,32 @@ public class DDDBStarterTest {
 
         System.out.println("Adding shard: " + response);
 
-        post.setHeader("address", "localhost");
+        post.setHeader("address", "192.168.50.174");
         post.setHeader("port", "8200");
         post.setHeader("command", "addShard");
-        requestBody = "Adding value";
+        requestBody = "Adding shard";
+        post.setEntity(new StringEntity(requestBody));
+        execute = client.execute(httpHost, post);
+        handler = new BasicResponseHandler();
+        response = handler.handleResponse(execute);
+
+        System.out.println("Adding shard: " + response);
+
+        post.setHeader("address", "192.168.50.187");
+        post.setHeader("port", "8100");
+        post.setHeader("command", "addShard");
+        requestBody = "Adding shard";
+        post.setEntity(new StringEntity(requestBody));
+        execute = client.execute(httpHost, post);
+        handler = new BasicResponseHandler();
+        response = handler.handleResponse(execute);
+
+        System.out.println("Adding shard: " + response);
+
+        post.setHeader("address", "192.168.50.187");
+        post.setHeader("port", "8200");
+        post.setHeader("command", "addShard");
+        requestBody = "Adding shard";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
         handler = new BasicResponseHandler();

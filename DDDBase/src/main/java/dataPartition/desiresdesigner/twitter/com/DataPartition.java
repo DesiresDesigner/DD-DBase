@@ -1,11 +1,8 @@
 package dataPartition.desiresdesigner.twitter.com;
 
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.io.UnsupportedEncodingException;
 
 /**
  * @author desiresdesigner
@@ -35,9 +32,9 @@ public class DataPartition {
         return tail.get(tail.firstKey());
     }
 
-    public static int hashRing(String key, int shardsAmount){ //by range (MongoDB simple implementation)
+    public static int rangeRing(String key, int shardsAmount){ //by rangeRing (MongoDB simple implementation)
         if (DataPartition.shardsAmount == 0 || DataPartition.shardsAmount != shardsAmount){
-            constructHashRing(shardsAmount);
+            constructRangeRing(shardsAmount);
             DataPartition.shardsAmount = shardsAmount;
         }
 
@@ -53,7 +50,7 @@ public class DataPartition {
         DataPartition.shardsAmount = shardsAmount;
     }
 
-    private static void constructHashRing(int shardsAmount){
+    private static void constructRangeRing(int shardsAmount){
         int shardDataAmount = (int)(26/shardsAmount);
         for (int l = 65; l < 91; l ++){
             int node = ((l-65)/shardDataAmount);

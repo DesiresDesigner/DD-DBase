@@ -1,6 +1,4 @@
 import dataPartition.desiresdesigner.twitter.com.DataPartition;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.BasicResponseHandler;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -9,7 +7,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 import static junit.framework.Assert.assertEquals;
@@ -112,7 +109,7 @@ public class DataPartitionTest {
     }*/
 
     @Test
-    public void hashRingTest() throws IOException {
+    public void rangeRingTest() throws IOException {
         DataPartition.setShardsAmount(0);
         System.out.println("Hash ring");
         int[] arr = new int[1000];
@@ -129,12 +126,12 @@ public class DataPartitionTest {
 
         int i = 0;
         for (String key : keys){
-            arr[i] = DataPartition.hashRing(key, 10);
+            arr[i] = DataPartition.rangeRing(key, 10);
             ++i;
         }
         i = 0;
         for (String key : keys){
-            assertEquals(arr[i], DataPartition.hashRing(key, 10));
+            assertEquals(arr[i], DataPartition.rangeRing(key, 10));
             if (arr[i] == 0)
                 ++shard1;
             else if (arr[i] == 1)

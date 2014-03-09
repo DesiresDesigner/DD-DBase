@@ -12,6 +12,7 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -41,6 +42,27 @@ public class DDDB {
         post = new HttpPost("/");
         client = HttpClientBuilder.create().build();
         httpHosts = new ArrayList();
+    }
+
+    public int clear() {
+        HttpHost v = httpHosts.get(0);
+        String response;
+        for (HttpHost host : httpHosts){
+            try{
+                post.setHeader("command", "clear");
+                String requestBody = "clear";
+                post.setEntity(new StringEntity(requestBody));
+                final HttpResponse execute = client.execute(host, post);
+                ResponseHandler<String> handler = new BasicResponseHandler();
+                response = handler.handleResponse(execute);
+            } catch (IOException e){
+                return 2;
+            }
+            if (response != "0"){
+                return Integer.parseInt(response);
+            }
+        }
+        return 0;
     }
 
     public int addShard(String address, int port) throws IOException {

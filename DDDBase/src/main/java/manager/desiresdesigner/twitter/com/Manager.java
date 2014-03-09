@@ -148,6 +148,25 @@ public class Manager {
         return bestPos;
     }
 
+    public int clearDataStorage(){
+        try {
+            RandomAccessFile data = new RandomAccessFile(dataStorage, "rw");
+            data.setLength(0);
+            data = new RandomAccessFile(pointerStorage, "rw");
+            data.setLength(0);
+            data = new RandomAccessFile(freeSpace, "rw");
+            data.setLength(0);
+        } catch (IOException e){
+            return 2;
+        }
+
+        keyPointers.clear();
+        freePointers.clear();
+        amount = 0;
+
+        return 0;
+    }
+
     public int addValue(String key, String value) {
         if (keyPointers.containsKey(key)){
             System.out.println("This key is already exist");

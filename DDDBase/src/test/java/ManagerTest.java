@@ -53,8 +53,19 @@ public class ManagerTest {
     }*/
 
     @Test
+    public void clearTest() throws IOException {
+        for (int i = 50; i < 100; i++){
+            assertEquals(testController.addValue(String.valueOf(i), String.valueOf(i-20)), 0);
+        }
+        //testController.clearDataStorage();
+        for (int i = 50; i < 100; i++){
+            assertEquals(testController.addValue(String.valueOf(i), String.valueOf(i-20)), 1);
+        }
+    }
+
+    /*@Test
     public void getKeysTest(){
         System.out.println(testController.getKeys());
-    }
+    }*/
 
 }

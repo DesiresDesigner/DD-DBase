@@ -77,6 +77,11 @@ public class Shard implements HttpHandler {
             responseBody = shardManager.getKeys();
             System.out.println("getKeys");
         }
+        else if (command.equals("clear")){
+            int res = shardManager.clearDataStorage();
+            responseBody = String.valueOf(res);
+            System.out.println("clear");
+        }
         else {
             responseBody = "4";
         }

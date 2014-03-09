@@ -16,7 +16,6 @@ public class DataPartition {
     public static int simpleHash(String key, int shardsAmount) { // Simple implementation by hash%n
         //int hashCode = key.hashCode();
         long hashCode = md5HashCode(key);
-        //System.out.println(hashCode);
         return (int)((hashCode + Math.pow(2, 31)) % shardsAmount);
     }
 
@@ -25,7 +24,8 @@ public class DataPartition {
             constructHashMap(shardsAmount);
             DataPartition.shardsAmount = shardsAmount;
         }
-        SortedMap<Long, Integer> tail = hashMapTree.tailMap(md5HashCode(key));
+        long hashCode = md5HashCode(key);
+        SortedMap<Long, Integer> tail = hashMapTree.tailMap(hashCode);
         if (tail.isEmpty()) {
             return hashMapTree.get(hashMapTree.firstKey());
         }
@@ -66,8 +66,9 @@ public class DataPartition {
 
     private static void constructHashMap(int shardsAmount) {
         for (int i = 0; i < shardsAmount; i ++){
-            for (int n = 0; n < 250; n++) {
-                hashMapTree.put(md5HashCode("SHARD-" + i + "-NODE-" + n), i);
+            for (int n = 0; n < 300; n++) {
+                long hashCOde = md5HashCode("SHARD-" + i + "-NODE-" + n);
+                hashMapTree.put(hashCOde, i);
             }
         }
     }

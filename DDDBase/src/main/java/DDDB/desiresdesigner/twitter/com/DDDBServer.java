@@ -77,6 +77,11 @@ public class DDDBServer implements HttpHandler {
             responseBody = String.valueOf(db.addShard(address, Integer.parseInt(port)));
             System.out.println("addShard(" + address + ", " + port + ")");
         }
+        else if (command.equals("clear")){
+            int res = db.clear();
+            responseBody = String.valueOf(res);
+            System.out.println("get(" + key + ")");
+        }
         else {
             responseBody = "4";
             System.out.println("unknown command");

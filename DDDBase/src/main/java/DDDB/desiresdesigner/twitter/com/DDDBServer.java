@@ -80,7 +80,6 @@ public class DDDBServer implements HttpHandler {
         else if (command.equals("clear")){
             int res = db.clear();
             responseBody = String.valueOf(res);
-            System.out.println("get(" + key + ")");
         }
         else {
             responseBody = "4";

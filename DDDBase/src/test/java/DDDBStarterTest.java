@@ -56,15 +56,14 @@ public class DDDBStarterTest {
     @Test
     public void commonTest() throws IOException {
 
-        //getKeys();
-        Map<String, String> keys = new HashMap();
+        //Map<String, String> keys = new HashMap();
 
         String requestBody;
         HttpResponse execute;
         ResponseHandler<String> handler;
         String response;
 
-        post.setHeader("address", "localhost");
+        post.setHeader("address", "192.168.50.174");
         post.setHeader("port", "8100");
         post.setHeader("command", "addShard");
         requestBody = "Adding shard";
@@ -96,6 +95,83 @@ public class DDDBStarterTest {
         response = handler.handleResponse(execute);
 
         assertEquals(response, "0");
+
+        post.setHeader("address", "192.168.50.174");
+        post.setHeader("port", "8200");
+        post.setHeader("command", "addShard");
+        requestBody = "Adding shard";
+        post.setEntity(new StringEntity(requestBody));
+        execute = client.execute(httpHost, post);
+        handler = new BasicResponseHandler();
+        response = handler.handleResponse(execute);
+
+        System.out.println("Adding shard: " + response);
+
+        for (int i = 0; i < 10; i ++){
+            post.setHeader("key", "key" + i);
+            post.setHeader("value", "value" + i);
+            post.setHeader("command", "add");
+            requestBody = "Adding value";
+            post.setEntity(new StringEntity(requestBody));
+            execute = client.execute(httpHost, post);
+            handler = new BasicResponseHandler();
+            response = handler.handleResponse(execute);
+
+            assertEquals(response, "0");
+        }
+
+        post.setHeader("command", "clear");
+        requestBody = "Clear Data Storage";
+        post.setEntity(new StringEntity(requestBody));
+        execute = client.execute(httpHost, post);
+        handler = new BasicResponseHandler();
+        response = handler.handleResponse(execute);
+
+        assertEquals(response, "0");
+
+        post.setHeader("address", "192.168.50.187");
+        post.setHeader("port", "8100");
+        post.setHeader("command", "addShard");
+        requestBody = "Adding shard";
+        post.setEntity(new StringEntity(requestBody));
+        execute = client.execute(httpHost, post);
+        handler = new BasicResponseHandler();
+        response = handler.handleResponse(execute);
+
+        System.out.println("Adding shard: " + response);
+
+        for (int i = 0; i < 10; i ++){
+            post.setHeader("key", "key" + i);
+            post.setHeader("value", "value" + i);
+            post.setHeader("command", "add");
+            requestBody = "Adding value";
+            post.setEntity(new StringEntity(requestBody));
+            execute = client.execute(httpHost, post);
+            handler = new BasicResponseHandler();
+            response = handler.handleResponse(execute);
+
+            assertEquals(response, "0");
+        }
+
+        post.setHeader("command", "clear");
+        requestBody = "Clear Data Storage";
+        post.setEntity(new StringEntity(requestBody));
+        execute = client.execute(httpHost, post);
+        handler = new BasicResponseHandler();
+        response = handler.handleResponse(execute);
+
+        assertEquals(response, "0");
+
+        post.setHeader("address", "192.168.50.187");
+        post.setHeader("port", "8200");
+        post.setHeader("command", "addShard");
+        requestBody = "Adding shard";
+        post.setEntity(new StringEntity(requestBody));
+        execute = client.execute(httpHost, post);
+        handler = new BasicResponseHandler();
+        response = handler.handleResponse(execute);
+
+        System.out.println("Adding shard: " + response);
 
         for (int i = 0; i < 10; i ++){
             post.setHeader("key", "key" + i);

@@ -37,15 +37,22 @@ public class DDDB {
     private final HttpPost post;
     private HttpClient client;
     private List <HttpHost> httpHosts;
+    private int distribution[];
 
     public DDDB(){
         post = new HttpPost("/");
         client = HttpClientBuilder.create().build();
         httpHosts = new ArrayList();
+        distribution = new int[4];
     }
 
     public int clear() {
-        HttpHost v = httpHosts.get(0);
+        System.out.print("Distribution: ");
+        for (int i = 0; i < 4; ++i){
+            System.out.print(distribution[i] + ", ");
+            distribution[i] = 0;
+        }
+        System.out.println();
         String response;
         for (HttpHost host : httpHosts){
             try{
@@ -58,7 +65,7 @@ public class DDDB {
             } catch (IOException e){
                 return 2;
             }
-            if (response != "0"){
+            if (!response.equals("0")){
                 return Integer.parseInt(response);
             }
         }
@@ -99,6 +106,8 @@ public class DDDB {
         final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
         ResponseHandler<String> handler = new BasicResponseHandler();
         String response = handler.handleResponse(execute);
+        if (response.equals("0"))
+            distribution[shardNumber] += 1;
         return Integer.parseInt(response);
     }
 

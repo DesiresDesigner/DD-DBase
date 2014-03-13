@@ -1,17 +1,15 @@
 package shard.desiresdesigner.twitter.com;
 
-import com.sun.net.httpserver.HttpServer;
-
-import java.io.IOException;
-import java.net.InetSocketAddress;
+import org.eclipse.jetty.server.Server;
+import test.desiresdesigner.twitter.com.Handler;
 
 /**
  * @author desiresdesigner
- * @since 1/26/14
+ * @since 3/11/14
  */
-public class ShardStarter {
+public class ShardServerStarter {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         int port = 8000;
         if (args.length == 0){
             System.out.println("use port 8000");
@@ -24,12 +22,10 @@ public class ShardStarter {
                 System.exit(0);
             }
         }
-        createServer(port);
-    }
 
-    private static void createServer(int port) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(port), 10);
-        server.createContext("/", new Shard(port + "data", port + "pointers", port + "free"));
+        Server server = new Server(port);
+        server.setHandler(new ShardServer(port + "data", port + "pointers", port + "free"));
         server.start();
+        server.join();
     }
 }

@@ -241,20 +241,12 @@ public class Manager {
         while((c = (char)data.readByte()) != ';'){
             ++size;
         }
-        PrintWriter free;
+        PrintWriter free = null;
         try {
             free = new PrintWriter(new FileWriter(freeSpace, true));
+            free.append(position + "-" + size + ";");
         } catch (Exception e) {
             return 2;
-            //System.out.println("Can't save changes");
-            //return false;
-        }
-        try{
-            free.append(position + "-" + size + ";");
-        } catch (Exception e){
-            return 2;
-            //System.out.println("Write error");
-            //return false;
         }
         finally {
             free.close();
@@ -264,13 +256,10 @@ public class Manager {
         keyPointers.remove(key);
         if (!rewriteKeys()){
             return 2;
-            //System.out.println("Write error");
-            //return false;
         }
         --amount;
         System.out.println("Amount: " + amount);
         return 0;
-        //return false;
     }
 
     public int editValue(String key, String value) throws IOException {

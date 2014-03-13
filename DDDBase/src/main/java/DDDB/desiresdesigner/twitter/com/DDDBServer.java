@@ -26,8 +26,6 @@ public class DDDBServer implements HttpHandler {
     @Override
     public void handle(HttpExchange httpExchange) throws IOException {
 
-        //new Thread(new DDDBQueryProcessor(db, httpExchange));
-
         long startTime = System.nanoTime();
         //System.out.println("New request. Time: " + System.nanoTime());
         String responseBody;
@@ -96,6 +94,5 @@ public class DDDBServer implements HttpHandler {
         httpExchange.close();
 
         System.out.println("Processing is complete. Work time: " + (System.nanoTime() - startTime));
-        //System.out.println("Processing is complete. Time: " + System.nanoTime());
     }
 }

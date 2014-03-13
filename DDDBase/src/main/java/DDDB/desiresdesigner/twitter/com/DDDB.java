@@ -1,7 +1,6 @@
 package DDDB.desiresdesigner.twitter.com;
 
 import dataPartition.desiresdesigner.twitter.com.DataPartition;
-import manager.desiresdesigner.twitter.com.Manager;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -12,7 +11,6 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;

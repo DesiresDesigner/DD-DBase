@@ -1,4 +1,3 @@
-import com.sun.net.httpserver.HttpServer;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -8,15 +7,10 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.Test;
-import shard.desiresdesigner.twitter.com.Shard;
 
 import static junit.framework.Assert.assertEquals;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.net.InetSocketAddress;
 import java.util.*;
 
 /**

@@ -50,10 +50,11 @@ public class DDDBBigTest {
         Set<String> keys = new HashSet();
         long startTime;
 
-        db.addShard("192.168.50.174", 8100);
+        //db.addShard("192.168.50.174", 8100);
+        db.addShard("localhost", 8100);
         System.out.println("1 Shard");
         System.out.println("Add");
-        for (int i = 0; i < 1000000; i ++){
+        for (int i = 0; i < 100; i ++){
             startTime = System.nanoTime();
             String key = UUID.randomUUID().toString();
             keys.add(key);
@@ -83,10 +84,11 @@ public class DDDBBigTest {
 
         db.clear();
         keys.clear();
-        db.addShard("192.168.50.174", 8200);
+        //db.addShard("192.168.50.174", 8200);
+        db.addShard("localhost", 8200);
         System.out.println("2 Shard");
         System.out.println("Add");
-        for (int i = 0; i < 1000000; i ++){
+        for (int i = 0; i < 100; i ++){
             startTime = System.nanoTime();
             String key = UUID.randomUUID().toString();
             keys.add(key);
@@ -114,7 +116,7 @@ public class DDDBBigTest {
 
         db.clear();
         keys.clear();
-        db.addShard("192.168.50.187", 8100);
+        /*db.addShard("192.168.50.187", 8100);
         System.out.println("2 Shard");
         System.out.println("Add");
         for (int i = 0; i < 1000000; i ++){
@@ -174,6 +176,6 @@ public class DDDBBigTest {
             System.out.println(System.nanoTime() - startTime);
         }
 
-        db.clear();
+        db.clear();*/
     }
 }

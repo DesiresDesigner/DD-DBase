@@ -24,7 +24,8 @@ public class ShardServerStarter {
         }
 
         Server server = new Server(port);
-        server.setHandler(new ShardServer(port + "data", port + "pointers", port + "free"));
+        //server.setHandler(new ShardServer(port + "data", port + "pointers", port + "free"));
+        server.setHandler(new ShardServer());
         server.start();
         server.join();
     }

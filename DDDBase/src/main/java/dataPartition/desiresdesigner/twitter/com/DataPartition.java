@@ -10,7 +10,7 @@ import java.util.TreeMap;
  */
 public class DataPartition {
     private static SortedMap<Long, Integer> hashMapTree = new TreeMap();
-    private static SortedMap<Integer, Integer> hashRingTree = new TreeMap();
+    private static SortedMap<Integer, Integer> rangeRingTree = new TreeMap();
     private static int shardsAmount = 0;
 
     public static int simpleHash(String key, int shardsAmount) { // Simple implementation by hash%n
@@ -19,11 +19,11 @@ public class DataPartition {
         return (int)((hashCode + Math.pow(2, 31)) % shardsAmount);
     }
 
-    public static int hashMap(String key, int shardsAmount) { // Simple implementation of Redis algorithm
-        if (DataPartition.shardsAmount == 0 || DataPartition.shardsAmount != shardsAmount){
+    public static int hashMap(String key){ //, int shardsAmount) { // Simple implementation of Redis algorithm
+        /*if (DataPartition.shardsAmount == 0 || DataPartition.shardsAmount != shardsAmount){
             constructHashMap(shardsAmount);
             DataPartition.shardsAmount = shardsAmount;
-        }
+        }*/
         long hashCode = md5HashCode(key);
         SortedMap<Long, Integer> tail = hashMapTree.tailMap(hashCode);
         if (tail.isEmpty()) {
@@ -32,39 +32,44 @@ public class DataPartition {
         return tail.get(tail.firstKey());
     }
 
-    public static int rangeRing(String key, int shardsAmount){ //by rangeRing (MongoDB simple implementation)
-        if (DataPartition.shardsAmount == 0 || DataPartition.shardsAmount != shardsAmount){
+    public static int rangeRing(String key){//, int shardsAmount){ //by rangeRing (MongoDB simple implementation)
+        /*if (DataPartition.shardsAmount == 0 || DataPartition.shardsAmount != shardsAmount){
             constructRangeRing(shardsAmount);
             DataPartition.shardsAmount = shardsAmount;
-        }
-
-        return hashRingTree.get((int)key.charAt(0));
-        /*SortedMap<Integer, Integer> tail = hashRingTree.tailMap(key.hashCode());
-        if (tail.isEmpty()) {
-            return hashRingTree.get(hashRingTree.firstKey());
-        }
-        return tail.get(tail.firstKey());*/
+        }                                             */
+        int i = 0;
+        while ((int)key.charAt(i) < 65 || ((int)key.charAt(i) > 90 && (int)key.charAt(i) < 97) || (int)key.charAt(i) > 122)
+            ++i;
+        //System.out.println(key.charAt(i));
+        return rangeRingTree.get((int)key.charAt(i));
     }
 
     public static void setShardsAmount(int shardsAmount){
         DataPartition.shardsAmount = shardsAmount;
     }
 
-    private static void constructRangeRing(int shardsAmount){
-        int shardDataAmount = (int)(26/shardsAmount);
+    public static void constructRangeRing(int shardsAmount){
+        System.out.println("Construct ring for " + shardsAmount);
+        //int shardDataAmount = (int)(26/shardsAmount);
         for (int l = 65; l < 91; l ++){
+            rangeRingTree.put(l, l%shardsAmount);
+        }
+        for (int l = 97; l < 123; l ++){
+            rangeRingTree.put(l, l%shardsAmount);
+        }
+        /*for (int l = 65; l < 91; l ++){
             int node = ((l-65)/shardDataAmount);
             node = (node < shardsAmount) ? node : shardsAmount - 1;
-            hashRingTree.put(l, node);
+            rangeRingTree.put(l, node);
         }
         for (int l = 97; l < 123; l ++){
             int node = ((l-97)/shardDataAmount);
             node = (node < shardsAmount) ? node : shardsAmount - 1;
-            hashRingTree.put(l, node);
-        }
+            rangeRingTree.put(l, node);
+        }*/
     }
 
-    private static void constructHashMap(int shardsAmount) {
+    public static void constructHashMap(int shardsAmount) {
         for (int i = 0; i < shardsAmount; i ++){
             for (int n = 0; n < 300; n++) {
                 long hashCOde = md5HashCode("SHARD-" + i + "-NODE-" + n);

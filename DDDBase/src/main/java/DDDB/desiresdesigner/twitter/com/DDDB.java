@@ -77,6 +77,8 @@ public class DDDB {
             String keysString = getKeysFromShard(i);
             if (keysString == "4")
                     return 4;
+            //DataPartition.constructRangeRing(shardAmount);
+            DataPartition.constructHashMap(shardAmount);
             Set <String> keysSet = parseKeys(keysString);
             for (String key : keysSet){
                 int shardNumber = getShardNumberForKey(key);
@@ -111,19 +113,6 @@ public class DDDB {
 
     public int delValue(String key) throws IOException {
         return delValueOnShard(key, getShardNumberForKey(key));
-        /*if (shardNumber == -1){
-            return shardManager.deleteValue(key);
-        }
-        else {
-            post.setHeader("key", key);
-            post.setHeader("command", "del");
-            String requestBody = "deleting value";
-            post.setEntity(new StringEntity(requestBody));
-            final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
-            ResponseHandler<String> handler = new BasicResponseHandler();
-            String response = handler.handleResponse(execute);
-            return Integer.parseInt(response);
-        }*/
     }
 
     public int editValue(String key, String value) throws IOException {
@@ -143,21 +132,8 @@ public class DDDB {
         return Integer.parseInt(response);
     }
 
-    public String getValue(String key) throws IOException { //
+    public String getValue(String key) throws IOException {
         return getValueFromShard(key, getShardNumberForKey(key));
-        /*if (shardNumber == -1){
-            return shardManager.getValue(key);
-        }
-        else {
-            post.setHeader("key", key);
-            post.setHeader("command", "get");
-            String requestBody = "getting value";
-            post.setEntity(new StringEntity(requestBody));
-            final HttpResponse execute = client.execute(httpHosts.get(shardNumber), post);
-            ResponseHandler<String> handler = new BasicResponseHandler();
-            String response = handler.handleResponse(execute);
-            return response;
-        }*/
     }
 
     private int delValueOnShard(String key, int shardNumber) throws IOException {
@@ -218,8 +194,8 @@ public class DDDB {
     }
 
     private int getShardNumberForKey(String key){
-        return DataPartition.simpleHash(key, shardAmount);
-        //return DataPartition.rangeRing(key, shardAmount);
-        //return DataPartition.hashMap(key, shardAmount);
+        //return DataPartition.simpleHash(key, shardAmount);
+        //return DataPartition.rangeRing(key);
+        return DataPartition.hashMap(key);
     }
 }

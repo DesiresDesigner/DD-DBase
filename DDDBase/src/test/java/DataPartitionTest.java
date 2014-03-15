@@ -51,7 +51,7 @@ public class DataPartitionTest {
         }
     }*/
 
-    @Test
+    /*@Test
     public void simpleHashTest() throws IOException {
         System.out.println("Simple hash");
         for (int i = 68; i < 91; i += 4){
@@ -110,13 +110,14 @@ public class DataPartitionTest {
         System.out.println("shard8: " + shard8);
         System.out.println("shard9: " + shard9);
         System.out.println("shard10: " + shard10);
-    }
+    }*/
 
     /*@Test
     public void rangeRingTest() throws IOException {
         DataPartition.setShardsAmount(0);
         System.out.println("Hash ring");
-        int[] arr = new int[1000];
+        Map <String, Integer> keys = new HashMap();
+        DataPartition.constructRangeRing(4);
         int shard1 = 0;
         int shard2 = 0;
         int shard3 = 0;
@@ -128,35 +129,34 @@ public class DataPartitionTest {
         int shard9 = 0;
         int shard10 = 0;
 
-        int i = 0;
-        for (String key : keys){
-            arr[i] = DataPartition.rangeRing(key, 4);
-            ++i;
+        for (int i = 0; i < 100; i++){
+            String key = UUID.randomUUID().toString();
+            keys.put(key, DataPartition.rangeRing(key));
         }
-        i = 0;
-        for (String key : keys){
-            assertEquals(arr[i], DataPartition.rangeRing(key, 4));
-            if (arr[i] == 0)
+        Set <String> keySet = keys.keySet();
+        for (String key : keySet){
+            int shardNumber = keys.get(key);
+            assertEquals(shardNumber, DataPartition.rangeRing(key));
+            if (shardNumber == 0)
                 ++shard1;
-            else if (arr[i] == 1)
+            else if (shardNumber == 1)
                 ++shard2;
-            else if (arr[i] == 2)
+            else if (shardNumber == 2)
                 ++shard3;
-            else if (arr[i] == 3)
+            else if (shardNumber == 3)
                 ++shard4;
-            else if (arr[i] == 4)
+            else if (shardNumber == 4)
                 ++shard5;
-            else if (arr[i] == 5)
+            else if (shardNumber == 5)
                 ++shard6;
-            else if (arr[i] == 6)
+            else if (shardNumber == 6)
                 ++shard7;
-            else if (arr[i] == 7)
+            else if (shardNumber == 7)
                 ++shard8;
-            else if (arr[i] == 8)
+            else if (shardNumber == 8)
                 ++shard9;
-            else if (arr[i] == 9)
+            else if (shardNumber == 9)
                 ++shard10;
-            ++i;
         }
         System.out.println("shard1: " + shard1);
         System.out.println("shard2: " + shard2);
@@ -171,10 +171,11 @@ public class DataPartitionTest {
     }*/
 
 
-    /*@Test
+    @Test
     public void hashMapTest() throws IOException {
         System.out.println("Hash map");
         Map <String, Integer> keys = new HashMap();
+        DataPartition.constructHashMap(4);
         int shard1 = 0;
         int shard2 = 0;
         int shard3 = 0;
@@ -186,16 +187,15 @@ public class DataPartitionTest {
         int shard9 = 0;
         int shard10 = 0;
 
-        for (int i = 0; i < 1000; i++){
+        for (int i = 0; i < 100; i++){
             String key = UUID.randomUUID().toString();
-            int shard_number = DataPartition.hashMap(key, 2);
+            int shard_number = DataPartition.hashMap(key);
             keys.put(key, shard_number);
         }
         Set <String> keySet = keys.keySet();
         for (String key : keySet){
-            //System.out.println("Stop");
             int shard_number = keys.get(key);
-            assertEquals(shard_number, DataPartition.hashMap(key, 2));
+            assertEquals(shard_number, DataPartition.hashMap(key));
             if (shard_number == 0)
                 ++shard1;
             else if (shard_number == 1)
@@ -227,5 +227,5 @@ public class DataPartitionTest {
         System.out.println("shard8: " + shard8);
         System.out.println("shard9: " + shard9);
         System.out.println("shard10: " + shard10);
-    } */
+    }
 }

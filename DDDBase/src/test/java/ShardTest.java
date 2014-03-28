@@ -43,8 +43,8 @@ public class ShardTest {
         String requestBody = "Adding value";
         post.setEntity(new StringEntity(requestBody));
         final HttpResponse execute = client.execute(httpHost, post);
-        ResponseHandler<String> handler = new BasicResponseHandler();
-        String response = handler.handleResponse(execute);
+        ResponseHandler<String> Handler = new BasicResponseHandler();
+        String response = Handler.handleResponse(execute);
 
         System.out.println(response);
         assertEquals(response, "true");
@@ -62,8 +62,8 @@ public class ShardTest {
         String requestBody = "getting value";
         post.setEntity(new StringEntity(requestBody));
         final HttpResponse execute = client.execute(httpHost, post);
-        ResponseHandler<String> handler = new BasicResponseHandler();
-        String response = handler.handleResponse(execute);
+        ResponseHandler<String> Handler = new BasicResponseHandler();
+        String response = Handler.handleResponse(execute);
 
         System.out.println(response);
         assertEquals(response, "Some_value");
@@ -82,8 +82,8 @@ public class ShardTest {
         String requestBody = "getting error";
         post.setEntity(new StringEntity(requestBody));
         final HttpResponse execute = client.execute(httpHost, post);
-        ResponseHandler<String> handler = new BasicResponseHandler();
-        String response = handler.handleResponse(execute);
+        ResponseHandler<String> Handler = new BasicResponseHandler();
+        String response = Handler.handleResponse(execute);
 
         System.out.println(response);
         assertEquals(response, "not valid command: invalidCommand.");

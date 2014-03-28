@@ -195,8 +195,8 @@ public class DDDBStarterTest {
         requestBody = "Adding shard";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
-        handler = new BasicResponseHandler();
-        response = handler.handleResponse(execute);
+        Handler = new BasicResponseHandler();
+        response = Handler.handleResponse(execute);
 
         System.out.println("Adding shard: " + response);
 
@@ -206,8 +206,8 @@ public class DDDBStarterTest {
         requestBody = "Adding shard";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
-        handler = new BasicResponseHandler();
-        response = handler.handleResponse(execute);
+        Handler = new BasicResponseHandler();
+        response = Handler.handleResponse(execute);
 
         System.out.println("Adding shard: " + response);
 
@@ -217,8 +217,8 @@ public class DDDBStarterTest {
         requestBody = "Adding shard";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
-        handler = new BasicResponseHandler();
-        response = handler.handleResponse(execute);
+        Handler = new BasicResponseHandler();
+        response = Handler.handleResponse(execute);
 
         System.out.println("Adding shard: " + response);
 
@@ -228,8 +228,8 @@ public class DDDBStarterTest {
         requestBody = "Adding shard";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
-        handler = new BasicResponseHandler();
-        response = handler.handleResponse(execute);
+        Handler = new BasicResponseHandler();
+        response = Handler.handleResponse(execute);
 
         System.out.println("Adding shard: " + response);
 
@@ -243,8 +243,8 @@ public class DDDBStarterTest {
             requestBody = "Adding value";
             post.setEntity(new StringEntity(requestBody));
             execute = client.execute(httpHost, post);
-            handler = new BasicResponseHandler();
-            response = handler.handleResponse(execute);
+            Handler = new BasicResponseHandler();
+            response = Handler.handleResponse(execute);
 
             assertEquals(response, "0");
         }
@@ -257,8 +257,8 @@ public class DDDBStarterTest {
             requestBody = "editing value";
             post.setEntity(new StringEntity(requestBody));
             execute = client.execute(httpHost, post);
-            handler = new BasicResponseHandler();
-            response = handler.handleResponse(execute);
+            Handler = new BasicResponseHandler();
+            response = Handler.handleResponse(execute);
 
             assertEquals(response, "0");
         }
@@ -269,8 +269,8 @@ public class DDDBStarterTest {
             requestBody = "getting value";
             post.setEntity(new StringEntity(requestBody));
             execute = client.execute(httpHost, post);
-            handler = new BasicResponseHandler();
-            response = handler.handleResponse(execute);
+            Handler = new BasicResponseHandler();
+            response = Handler.handleResponse(execute);
 
             assertEquals(response, keys.get(key) + "new");
         }
@@ -281,8 +281,8 @@ public class DDDBStarterTest {
             requestBody = "deleting value";
             post.setEntity(new StringEntity(requestBody));
             execute = client.execute(httpHost, post);
-            handler = new BasicResponseHandler();
-            response = handler.handleResponse(execute);
+            Handler = new BasicResponseHandler();
+            response = Handler.handleResponse(execute);
 
             assertEquals(response, "0");
         }*/

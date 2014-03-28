@@ -34,8 +34,8 @@ public class AddShards {
         requestBody = "Adding shard";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
-        handler = new BasicResponseHandler();
-        response = handler.handleResponse(execute);
+        Handler = new BasicResponseHandler();
+        response = Handler.handleResponse(execute);
 
         System.out.println("Adding shard: " + response);*/
 
@@ -56,8 +56,8 @@ public class AddShards {
         requestBody = "Adding shard";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
-        handler = new BasicResponseHandler();
-        response = handler.handleResponse(execute);
+        Handler = new BasicResponseHandler();
+        response = Handler.handleResponse(execute);
 
         System.out.println("Adding shard: " + response);
 
@@ -67,8 +67,8 @@ public class AddShards {
         requestBody = "Adding shard";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
-        handler = new BasicResponseHandler();
-        response = handler.handleResponse(execute);
+        Handler = new BasicResponseHandler();
+        response = Handler.handleResponse(execute);
 
         System.out.println("Adding shard: " + response);
 
@@ -78,8 +78,8 @@ public class AddShards {
         requestBody = "Adding shard";
         post.setEntity(new StringEntity(requestBody));
         execute = client.execute(httpHost, post);
-        handler = new BasicResponseHandler();
-        response = handler.handleResponse(execute);
+        Handler = new BasicResponseHandler();
+        response = Handler.handleResponse(execute);
 
         System.out.println("Adding shard: " + response);/**/
     }

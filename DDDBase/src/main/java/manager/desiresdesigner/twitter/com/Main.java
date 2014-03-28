@@ -7,22 +7,10 @@ import java.io.IOException;
  * @since 1/6/14
  */
 public class Main {
-    public static void main(String[] args) throws IOException {
-        /*Manager testController = new Manager();
-        testController.addValue("1", "Kate");
-        testController.addValue("2", "Michail");
-        testController.addValue("3", "Artemiy");
-        testController.addValue("4", "Tatiana");
-        testController.addValue("5", "Vitaliy");
-        testController.addValue("6", "Natasha");
-        testController.deleteValue("5");
-        testController.addValue("101", "Masha");
-        System.out.println(testController.getValue("101"));*/
+    enum Day { SUNDAY, MONDAY, TUESDAY, WEDNESDAY,THURSDAY, FRIDAY, SATURDAY };
 
-        int i = 0;
-        i = (i++ + ++i);
+    public static void main(String[] args) {
 
-        System.out.println(i);
+        System.out.println(Day.MONDAY.getClass());
     }
-
 }
